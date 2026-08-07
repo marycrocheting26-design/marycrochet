@@ -418,145 +418,209 @@ transform:scale(1);
 }
 
 
-/* ================= RESPONSIVE DEL MODAL =================*/
+/* ================= RESPONSIVE DEL MODAL ================= */
+
 @media(max-width:768px){
+
+/* ===== MODAL ===== */
 
 .modal-contenido{
 
-grid-template-columns:1fr;
+    grid-template-columns:1fr;
 
-width:90%;
+    width:92%;
 
-max-height:85vh;
+    max-height:90vh;
 
-overflow:auto;
+    overflow:auto;
 
 }
+
 
 #modal-imagen{
 
-width:100%;
+    width:100%;
 
-height:320px;
+    height:280px;
 
-object-fit:cover;
+    object-fit:cover;
 
-border-radius:15px;
+    border-radius:15px;
 
 }
+
 
 .modal-info{
 
-padding:15px;
+    padding:18px;
+
+    text-align:center;
 
 }
+
 
 .modal-info h2{
 
-font-size:1.15rem;
+    font-size:1.2rem;
 
 }
 
+
 .modal-info p{
 
-font-size:0.85rem;
+    font-size:.9rem;
 
-line-height:1.4;
+    line-height:1.5;
 
 }
 
 
 .modal-boton{
 
-width:90%;
+    width:100%;
 
-max-width:280px;
+    max-width:260px;
 
-padding:10px 15px;
+    padding:11px 15px;
 
-font-size:0.85rem;
-
-margin:15px auto 0;
+    font-size:.85rem;
 
 }
 
- /* X cerrar modal */
+
+/* ===== X CERRAR MODAL ===== */
 
 .cerrar-modal{
 
-top:10px;
+    top:10px;
 
-right:10px;
+    right:10px;
 
-color:white;
+    color:white;
 
-background:rgba(139,90,80,0.65);
+    background:rgba(139,90,80,.75);
 
-width:38px;
+    width:40px;
 
-height:38px;
+    height:40px;
 
-font-size:28px;
+    font-size:28px;
 
-border-radius:50%;
-
-box-shadow:
-0 4px 12px rgba(0,0,0,0.25);
-
-backdrop-filter:blur(4px);
+    z-index:200;
 
 }
+
+
+
+/* ==========================
+   SOBRE MARY CELULAR
+========================== */
 
 
 .seccion-sobre{
 
-padding:70px 20px;
+    padding:70px 20px;
 
 }
 
 
 .sobre-contenido{
 
- display:flex !important;
-flex-direction:column !important;
-gap:30px !important;
-width:100% !important;
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    align-items:center !important;
+
+    gap:35px !important;
+
+    width:100% !important;
+
 }
 
 
 .sobre-imagen{
 
-width:100% !important;
-display:flex !important;
-justify-content:center !important;
+    width:100% !important;
+
+    display:flex !important;
+
+    justify-content:center !important;
+
 }
 
- .sobre-imagen img{
-        width:280px !important;
-        max-width:90% !important;
-        height:auto !important;
-    }
+
+.sobre-imagen img{
+
+    width:100% !important;
+
+    max-width:330px !important;
+
+    height:auto !important;
+
+    border-radius:25px;
+
+}
 
 
-    .sobre-texto h2{
+/* TEXTO */
+
+.sobre-texto{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+
+.subtitulo-seccion{
+
+    font-size:.9rem;
+
+    padding:8px 16px;
+
+}
+
+
+.sobre-texto h2{
 
     font-size:2rem !important;
-    line-height:1.3 !important;
-    }
 
+    line-height:1.25 !important;
 
-    .sobre-texto p{
-
-     font-size:.95rem !important;
-        line-height:1.6 !important;
-    }
-
-    
-
-
+    margin-bottom:20px;
 
 }
 
+
+.sobre-texto p{
+
+    font-size:1rem !important;
+
+    line-height:1.7 !important;
+
+}
+
+
+/* FRASE FINAL */
+
+.frase-mary{
+
+    margin-top:30px;
+
+    padding:20px;
+
+}
+
+
+.frase-mary p{
+
+    font-size:1.05rem;
+
+}
+
+}
 
 
 /*====================================================
