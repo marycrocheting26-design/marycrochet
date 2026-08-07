@@ -36,7 +36,9 @@ const productos = {
 
             "img/individual oro.jpg",
 
-            "img/individual rosita.jpg"
+            "img/individual rosita.jpg",
+            "img/individual con flores rojas alrededor.jpg",
+            "img/individual blanco.jpg",
 
         ]
 
@@ -59,6 +61,31 @@ const productos = {
 
         ]
 
+    },
+
+    "Bolsitos": {
+
+        titulo: "Bolsitos",
+
+        descripcion:
+        "Bolsos a crochet tejidas a mano que combinan diseño, practicidad y un encanto artesanal único para acompañarte en cada ocasión.",
+        
+        imagenes: [
+
+            "img/bolso agujeros.jpg",
+
+            "img/bolso color pastel con negro.jpg",
+
+            "img/cartera de mano.jpg",
+
+            "img/bolso lilas.jpg",
+            "img/bolso rojo y rosita.jpg",
+            "img/bolso naranja y amarillo.jpg",
+            "img/bolso pasteles.jpg"
+
+        ]
+
     }
+
 
 };
