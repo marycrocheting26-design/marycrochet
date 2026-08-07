@@ -327,6 +327,8 @@
 
     animation:aparecer .35s;
 
+    position:relative;
+
 }
 
 #modal-imagen{
@@ -363,17 +365,35 @@
 
 .cerrar-modal{
 
-    position:absolute;
-
-    right:20px;
+ position:absolute;
 
     top:15px;
 
-    font-size:35px;
+    right:20px;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    color:#8b5a50;
 
     cursor:pointer;
 
-    color:#fff;
+    z-index:100;
+
+    width:40px;
+
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    transition:0.3s ease;
 
 }
 
@@ -422,6 +442,53 @@ height:260px;
 .modal-info{
 
 padding:20px;
+
+}
+
+ .modal-info h2{
+
+font-size:1.3rem;
+
+}
+
+ .modal-info p{
+
+font-size:0.9rem;
+
+line-height:1.5;
+
+}
+
+
+.modal-boton{
+
+width:90%;
+
+max-width:280px;
+
+padding:10px 15px;
+
+font-size:0.85rem;
+
+margin:15px auto 0;
+
+}
+
+ /* X cerrar modal */
+
+.cerrar-modal{
+
+top:10px;
+
+right:12px;
+
+width:35px;
+
+height:35px;
+
+font-size:28px;
+
+z-index:20;
 
 }
 
