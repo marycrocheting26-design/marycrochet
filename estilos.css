@@ -541,7 +541,7 @@ transform:scale(1);
 
 .sobre-imagen{
 
-    width:35% !important;
+    width:32% !important;
 
     flex-shrink: 0;
 }
@@ -551,7 +551,7 @@ transform:scale(1);
 
     width:100% !important;
 
-    max-width:120px !important;
+    max-width:135px !important;
 
     border-radius:20px;
 
@@ -566,12 +566,14 @@ transform:scale(1);
 
     text-align: left;
 
+    padding-top: 5px;
+
 }
 
 
 .subtitulo-seccion{
 
-    font-size:75rem;
+    font-size: .9rem;
 
     padding:6px 12px;
 
