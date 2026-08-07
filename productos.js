@@ -15,8 +15,6 @@ const productos = {
 
             "img/juego de baño amarillonegro.jpg",
 
-            "img/juego de baño blanco.jpg",
-
             "img/juego de baño marroncito.jpg"
 
         ]
