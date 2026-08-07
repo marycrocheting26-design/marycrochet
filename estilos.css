@@ -244,13 +244,19 @@
 
     .boton-producto{
 
-        width:100%;
+       display:block;
 
-        text-align:center;
+        width:82%;
 
-        padding:14px;
+        max-width:230px;
 
-        font-size:1rem;
+        margin:18px auto 0;
+
+        padding:12px 16px;
+
+        font-size:.9rem;
+
+        box-sizing:border-box;
 
     }
 
@@ -2357,14 +2363,15 @@ text-align:center;
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3, 1fr);
 
-    gap:30px;
+    gap:28px;
 
-    max-width:1100px;
+    max-width:1000px;
 
-    margin:0 auto;
+    margin:40px auto;
 
+    padding:0 20px;
 }
 
 
@@ -2373,22 +2380,22 @@ text-align:center;
 *====================================================*/
 
 .tarjeta-galeria{
+ position:relative;
 
-    background:white;
+    background:#fffdf9;
 
     padding:10px;
 
     border-radius:22px;
 
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.08);
+    border:1px solid rgba(212,138,92,.18);
 
-    overflow:hidden;
+    box-shadow:
+        0 10px 25px rgba(80,50,35,.08);
 
     transition:.35s ease;
 
-    cursor:pointer;
-
+    overflow:hidden;
 }
 
 .tarjeta-galeria:hover{
@@ -2400,6 +2407,24 @@ text-align:center;
 
 }
 
+/* DETALLE INTERIOR */
+
+.tarjeta-galeria::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:6px;
+
+    border:1px dashed rgba(212,138,92,.22);
+
+    border-radius:17px;
+
+    pointer-events:none;
+
+}
+
 
 /*====================================================*
 *=                    IMAGEN                         =*
@@ -2407,23 +2432,34 @@ text-align:center;
 
 .tarjeta-galeria img{
 
-    display:block;
+   display:block;
 
     width:100%;
 
-    height:300px;
+    aspect-ratio:1 / 1;
 
     object-fit:cover;
 
     border-radius:16px;
 
-    transition:.4s ease;
+    cursor:pointer;
+
+    transition:.35s ease;
 
 }
 
 .tarjeta-galeria:hover img{
 
-    transform:scale(1.03);
+      transform:scale(1.03);
+
+}
+
+.tarjeta-galeria:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 16px 35px rgba(80,50,35,.12);
 
 }
 
@@ -2514,25 +2550,35 @@ text-align:center;
 
     #galeria-productos{
 
-        grid-template-columns:1fr;
+         grid-template-columns:repeat(2, 1fr);
 
-        gap:22px;
+        gap:16px;
+
+        margin:30px auto;
+
+        padding:0 15px;
 
     }
 
     .tarjeta-galeria{
 
-        padding:8px;
+        padding:7px;
 
-        border-radius:20px;
+        border-radius:18px;
+
+    }
+
+    .tarjeta-galeria::before{
+
+        inset:4px;
+
+        border-radius:14px;
 
     }
 
     .tarjeta-galeria img{
 
-        height:300px;
-
-        border-radius:15px;
+          border-radius:13px;
 
     }
 
