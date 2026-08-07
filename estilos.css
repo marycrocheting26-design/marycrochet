@@ -1539,5 +1539,730 @@ text-align: center;
 
 }
 
+/*====================================================
+=                  CONTACTO                          =
+====================================================*/
+
+.seccion-contacto{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:120px 8%;
+
+    background:linear-gradient(180deg,#fffdf9,#fff8f2);
+
+    background-image:
+    radial-gradient(rgba(212,138,92,.05) 1px, transparent 1px);
+
+    background-size:22px 22px;
+
+}
+
+.contacto-contenido{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+/*====================================================
+=          BOTÓN VOLVER - CONTACTO
+====================================================*/
+
+#volver-inicio-contacto{
+
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:0 auto 50px;
+
+}
+
+/*====================================================
+=                TEXTO CONTACTO                      =
+====================================================*/
+
+.contacto-texto h2{
+
+    font-family:'Fraunces',serif;
+
+    font-size:3rem;
+
+    color:#7b4e38;
+
+    margin-bottom:25px;
+
+}
+
+.contacto-texto p{
+
+    color:#5d4a40;
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+
+}
+
+/*====================================================
+=               TARJETA CONTACTO                     =
+====================================================*/
+
+/*====================================================
+=              TARJETA CONTACTO
+====================================================*/
+
+.tarjeta-contacto{
+
+    position:relative;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(10px);
+
+    padding:45px;
+
+    border-radius:35px;
+
+    border:1px solid rgba(212,138,92,.15);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.08),
+        0 0 0 8px rgba(255,255,255,.35);
+
+    transition:.45s;
+
+}
+
+.tarjeta-contacto:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 28px 55px rgba(0,0,0,.12),
+        0 0 0 8px rgba(255,255,255,.45);
+
+}
+
+.tarjeta-contacto h3{
+
+    color:#8f5a43;
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+}
+
+.tarjeta-contacto p{
+
+    color:#666;
+
+    margin-bottom:30px;
+
+}
+
+/*====================================================
+=              FONDO DECORATIVO
+====================================================*/
+
+.fondo-contacto{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+/*====================================================
+=          DETALLE ARTESANAL
+====================================================*/
+
+.tarjeta-contacto::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:18px;
+    left:18px;
+    right:18px;
+    bottom:18px;
+
+    border:2px dashed rgba(212,138,92,.25);
+
+    border-radius:25px;
+
+    pointer-events:none;
+
+}
 
 
+
+/*====================================================
+=              ANIMACIÓN TARJETA
+====================================================*/
+
+@keyframes flotarTarjeta{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.tarjeta-contacto{
+
+    animation:flotarTarjeta 6s ease-in-out infinite;
+
+}
+
+/*====================================================
+=                  BOTONES                           =
+====================================================*/
+
+.boton-contacto{
+
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    padding:16px;
+
+    border-radius:50px;
+
+    margin-bottom:18px;
+
+    font-weight:bold;
+
+    transition:.35s;
+
+}
+
+.whatsapp{
+
+    background:#25D366;
+
+    color:white;
+
+}
+
+.whatsapp:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(37,211,102,.30);
+
+}
+
+.instagram{
+
+    background:linear-gradient(
+        45deg,
+        #833AB4,
+        #E1306C,
+        #FCAF45
+    );
+
+    color:white;
+
+}
+
+.instagram:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(225,48,108,.30);
+
+}
+
+/*====================================================
+=          DECORACIÓN CROCHET
+====================================================*/
+
+.ovillo{
+
+    position:absolute;
+
+    font-size:120px;
+
+    opacity:.10;
+
+    z-index:1;
+
+    user-select:none;
+
+}
+
+.ovillo-1{
+
+    top:40px;
+
+    right:50px;
+
+}
+
+.ovillo-2{
+
+    bottom:30px;
+
+    left:40px;
+
+}
+
+.flor{
+
+    position:absolute;
+
+    font-size:55px;
+
+    opacity:.12;
+
+    z-index:1;
+
+}
+
+.flor-1{
+
+    top:220px;
+
+    left:8%;
+
+}
+
+.flor-2{
+
+    bottom:120px;
+
+    right:10%;
+
+}
+
+/*====================================================
+=           SEPARADOR CONTACTO
+====================================================*/
+
+.separador-contacto{
+
+    padding:90px 20px 40px;
+
+    text-align:center;
+
+    background:#fffdf9;
+
+}
+
+.separador-contacto h2{
+
+    font-family:'Fraunces',serif;
+
+    font-size:2.6rem;
+
+    color:#8f5a43;
+
+    margin-bottom:18px;
+
+}
+
+.separador-contacto p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:#6d5648;
+
+    line-height:1.8;
+
+}
+
+/*====================================================
+=                HILO DECORATIVO
+====================================================*/
+
+.hilo{
+
+    position:absolute;
+
+    top:110px;
+
+    left:-80px;
+
+    width:135%;
+
+    height:520px;
+
+    border:4px solid #d8b6a2;
+
+    border-color:#d8b6a2 transparent transparent transparent;
+
+    border-radius:50%;
+
+    opacity:.25;
+
+    z-index:0;
+
+}
+
+/*====================================================
+=              INFORMACIÓN EXTRA
+====================================================*/
+
+.info-extra{
+
+    margin-top:30px;
+
+    padding-top:20px;
+
+    border-top:1px solid #f0e4db;
+
+}
+
+.info-extra p{
+
+    margin:12px 0;
+
+    color:#7b5a49;
+
+    font-size:.95rem;
+
+}
+
+
+
+/*====================================================
+=                  FOOTER
+====================================================*/
+
+.footer{
+
+    background:#8f5a43;
+
+    color:white;
+
+    padding:70px 8% 25px;
+
+}
+
+.footer-contenido{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:60px;
+
+}
+
+.footer h3{
+
+    font-family:'Fraunces',serif;
+
+    font-size:2rem;
+
+    margin-bottom:18px;
+
+}
+
+.footer h4{
+
+    margin-bottom:18px;
+
+}
+
+.footer p{
+
+    line-height:1.8;
+
+    opacity:.9;
+
+}
+
+.footer a{
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+
+}
+
+.footer a:hover{
+
+    transform:translateX(8px);
+
+    color:#ffe7d8;
+
+}
+
+.footer-copy{
+
+    text-align:center;
+
+    margin-top:60px;
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.2);
+
+    opacity:.8;
+
+}
+
+/*====================================================
+=              FOOTER RESPONSIVE
+====================================================*/
+
+@media(max-width:768px){
+
+    .footer{
+
+        padding:50px 25px 20px;
+
+    }
+
+    .footer-contenido{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+        text-align:center;
+
+    }
+
+    .footer a:hover{
+
+        transform:none;
+
+    }
+
+}
+
+
+
+
+/*====================================================
+=            SECCIONES OCULTAS
+====================================================*/
+
+.oculto{
+
+    display:none;
+
+}
+
+
+/*====================================================
+=            CONTACTO RESPONSIVE
+====================================================*/
+
+@media(max-width:768px){
+
+    .seccion-contacto{
+
+        padding:70px 20px;
+
+    }
+
+    #volver-inicio-contacto{
+
+        display:flex;
+
+        justify-content:center;
+
+        margin:0 auto 35px;
+
+        width:85%;
+
+        max-width:280px;
+
+    }
+
+    .contacto-contenido{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+    .contacto-texto{
+
+        text-align:center;
+
+    }
+
+    .contacto-texto h2{
+
+        font-size:2rem;
+
+    }
+
+    .contacto-texto p{
+
+        font-size:.95rem;
+
+        line-height:1.7;
+
+    }
+
+    .tarjeta-contacto{
+
+        padding:28px 22px;
+
+        border-radius:25px;
+
+    }
+
+    .tarjeta-contacto h3{
+
+        font-size:1.5rem;
+
+        text-align:center;
+
+    }
+
+    .tarjeta-contacto p{
+
+        font-size:.9rem;
+
+        text-align:center;
+
+    }
+
+    .boton-contacto{
+
+        padding:14px;
+
+        font-size:.95rem;
+
+    }
+
+    .info-extra{
+
+        text-align:center;
+
+    }
+
+    .tarjeta-contacto::after{
+
+    font-size:25px;
+
+}
+
+}
+
+/*====================================================
+=        OVILLO RECORRIENDO TARJETA CONTACTO
+====================================================*/
+
+.tarjeta-contacto::after{
+
+    content:"🧶";
+
+    position:absolute;
+
+    font-size:32px;
+
+    top:-18px;
+
+    left:-18px;
+
+    z-index:5;
+
+    animation:
+    moverOvillo 18s linear infinite,
+    girarOvillo 5s linear infinite;
+
+}
+
+
+/* RECORRIDO */
+
+@keyframes moverOvillo{
+
+    0%{
+        top:-18px;
+        left:-18px;
+    }
+
+
+    25%{
+        top:-18px;
+        left:calc(100% - 20px);
+    }
+
+
+    50%{
+        top:calc(100% - 20px);
+        left:calc(100% - 20px);
+    }
+
+
+    75%{
+        top:calc(100% - 20px);
+        left:-18px;
+    }
+
+
+    100%{
+        top:-18px;
+        left:-18px;
+    }
+
+}
+
+
+/* GIRO DEL OVILLO */
+
+@keyframes girarOvillo{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}

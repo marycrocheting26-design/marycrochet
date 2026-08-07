@@ -15,7 +15,9 @@ const productos = {
 
             "img/juego de baño amarillonegro.jpg",
 
-            "img/juego de baño marroncito.jpg"
+            "img/juego de baño marroncito.jpg",
+
+            "img/juego de baño negro completo.jpg"
 
         ]
 
@@ -31,7 +33,10 @@ const productos = {
         imagenes: [
 
             "img/individual con flor.jpg",
-            "img/individual oro.jpg"
+
+            "img/individual oro.jpg",
+
+            "img/individual rosita.jpg"
 
         ]
 
@@ -48,7 +53,9 @@ const productos = {
 
             "img/camino mesa balnco con corazon.jpg",
 
-            "img/camino de mesa floreado.jpg"
+            "img/camino de mesa floreado.jpg",
+
+            "img/camino de mesa naranja.jpg"
 
         ]
 

@@ -20,6 +20,9 @@ const sobreMary = document.getElementById("sobre-mi");
 const botonSobre = document.getElementById("boton-sobre");
 const volverInicioSobre = document.getElementById("volver-inicio-sobre");
 const volverInicioProductos = document.getElementById("volver-inicio-productos");
+const contacto = document.getElementById("contacto");
+const botonContacto = document.getElementById("boton-contacto");
+const volverInicioContacto = document.getElementById("volver-inicio-contacto");
 
 let productoActual = null;
 let imagenActual = 0;
@@ -290,6 +293,44 @@ volverInicioProductos.addEventListener("click", (e)=>{
     window.scrollTo({
         top:0,
         behavior:"smooth"
+    });
+
+});
+
+
+volverInicioContacto.addEventListener("click", (e)=>{
+
+    e.preventDefault();
+
+    contacto.classList.add("oculto");
+
+    inicio.style.display = "block";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+botonContacto.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    inicio.style.display = "none";
+
+    productosSeccion.classList.add("oculto");
+
+    sobreMary.classList.add("oculto");
+
+    contacto.classList.remove("oculto");
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
     });
 
 });
