@@ -508,65 +508,51 @@ backdrop-filter:blur(4px);
 }
 
 
-   .seccion-sobre{
+.seccion-sobre{
 
-        padding:70px 20px;
+padding:70px 20px;
 
-    }
-
-
-    .sobre-contenido{
-
-        grid-template-columns:1fr;
-
-        gap:40px;
-
-        text-align:center;
-
-    }
+}
 
 
-    .sobre-imagen img{
+.sobre-contenido{
 
-        max-width:320px;
+ display:flex !important;
+flex-direction:column !important;
+gap:30px !important;
+width:100% !important;
+}
 
-        width:100%;
 
-        border-radius:25px;
+.sobre-imagen{
 
+width:100% !important;
+display:flex !important;
+justify-content:center !important;
+}
+
+ .sobre-imagen img{
+        width:280px !important;
+        max-width:90% !important;
+        height:auto !important;
     }
 
 
     .sobre-texto h2{
 
-        font-size:2rem;
-
+    font-size:2rem !important;
+    line-height:1.3 !important;
     }
 
 
     .sobre-texto p{
 
-        font-size:.95rem;
-
-        line-height:1.7;
-
+     font-size:.95rem !important;
+        line-height:1.6 !important;
     }
 
+    
 
-    .frase-mary{
-
-        padding:20px;
-
-        margin-top:30px;
-
-    }
-
-
-    .frase-mary p{
-
-        font-size:1.05rem;
-
-    }
 
 
 }
