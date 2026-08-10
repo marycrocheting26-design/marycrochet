@@ -73,7 +73,15 @@ const productos = {
             "img/camino mesa flores celestes.jpg",
             "img/camino mesa flores grandes.jpg",
             "img/centro de mesa marroncito.jpg",
-            "img/centro de mesa con bordes oros.jpg"
+            "img/centro de mesa con bordes oros.jpg",
+            "img/camino de mesa flores grandes.jpg",
+            "img/camino de mesa de flor.jpg",
+            "img/centro de mesa negro con rojo.jpg",
+            "img/camino de mesa largo blanco.jpg"
+
+
+
+
 
 
 
@@ -133,7 +141,15 @@ const productos = {
             "img/alfombra verdes.jpg",
             "img/alfombra azul con negro.jpg",
             "img/alfombras marrones claritos.jpg",
-            "img/alfombra roja y negra.jpg"
+            "img/alfombra roja y negra.jpg",
+            "img/alfombra grande sala.png",
+            "img/alfombra con flor gris.jpg",
+            "img/alfombra negro con azul.jpg",
+            "img/alfombras gris.jpg"
+
+
+
+
 
 
 

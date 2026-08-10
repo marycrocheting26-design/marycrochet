@@ -243,9 +243,39 @@ botonCreaciones.addEventListener("click", (e) => {
 
     productosSeccion.classList.remove("oculto");
 
+    /* ==========================================
+       ANIMACIÓN DE LAS TARJETAS
+    ========================================== */
+
+    const tarjetasProductos = document.querySelectorAll(
+        ".tarjeta-producto"
+    );
+
+    tarjetasProductos.forEach((tarjeta, indice) => {
+
+        /* Reiniciamos la animación */
+
+        tarjeta.classList.remove("mostrar-tarjeta");
+
+        /* Forzamos al navegador a reiniciarla */
+
+        void tarjeta.offsetWidth;
+
+        setTimeout(() => {
+
+            tarjeta.classList.add("mostrar-tarjeta");
+
+        }, indice * 180);
+
+    });
+
+
     window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
     });
 
 });
@@ -334,7 +364,41 @@ botonContacto.addEventListener("click", (e) => {
     });
 
 });
+/*====================================================
+=              PRELOADER
+====================================================*/
 
+window.addEventListener("load", () => {
+
+    const preloader = document.getElementById("preloader");
+
+    const heroTexto = document.querySelector(".hero-texto");
+
+    const heroImagen = document.querySelector(".hero-imagen");
+
+
+    setTimeout(() => {
+
+        preloader.classList.add("ocultar-preloader");
+
+
+        setTimeout(() => {
+
+            preloader.style.display = "none";
+
+
+            /* ENTRADA DEL HERO */
+
+            heroTexto.classList.add("entrada");
+
+            heroImagen.classList.add("entrada");
+
+
+        }, 800);
+
+    }, 5000);
+
+});
 });
 
 

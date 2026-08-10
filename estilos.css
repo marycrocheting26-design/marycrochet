@@ -2775,3 +2775,446 @@ text-align:center;
     }
 
 }
+
+
+/*====================================================
+=             PANTALLA DE BIENVENIDA
+====================================================*/
+
+#preloader{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100vh;
+
+    background-image:url("img/imagen\ fondo\ cargando.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+
+/*====================================================
+=             CONTENIDO CENTRAL
+====================================================*/
+
+.preloader-contenido{
+
+    text-align:center;
+
+    color:#7b4e38;
+
+}
+
+
+/*====================================================
+=                 NOMBRE
+====================================================*/
+
+.preloader-contenido h1{
+
+    font-family:'Fraunces',serif;
+
+    font-size:4.5rem;
+
+    font-weight:600;
+
+    margin:0 0 20px;
+
+    color:#7b4e38;
+
+    letter-spacing:1px;
+
+}
+
+
+/*====================================================
+=              SEPARADOR CON CORAZÓN
+====================================================*/
+
+.preloader-separador{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+}
+
+.preloader-separador span{
+
+    width:90px;
+
+    height:2px;
+
+    background:#d88d7b;
+
+    opacity:.8;
+
+}
+
+.preloader-separador strong{
+
+    font-size:1.3rem;
+
+    color:#d47f6d;
+
+    font-weight:400;
+
+}
+
+
+/*====================================================
+=                   FRASE
+====================================================*/
+
+.preloader-contenido p{
+
+    font-family:'Nunito',sans-serif;
+
+    font-size:1.15rem;
+
+    color:#8f5a43;
+
+    margin:0 0 28px;
+
+}
+
+
+/*====================================================
+=                  BARRA DE CARGA
+====================================================*/
+
+.preloader-carga{
+
+    width:180px;
+
+    height:6px;
+
+    background:rgba(255,255,255,.7);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin:0 auto 12px;
+
+    box-shadow:0 2px 8px rgba(180,100,90,.12);
+
+}
+
+.preloader-carga span{
+
+    display:block;
+
+    width:45%;
+
+    height:100%;
+
+    background:#d88d7b;
+
+    border-radius:20px;
+
+    animation:cargando 2.5s ease-in-out infinite;
+
+}
+
+
+/*====================================================
+=                TEXTO CARGANDO
+====================================================*/
+
+.preloader-texto-carga{
+
+    font-family:'Nunito',sans-serif;
+
+    font-size:.85rem;
+
+    letter-spacing:4px;
+
+    color:#9a6655;
+
+}
+
+
+/*====================================================
+=                  ANIMACIÓN CARGA
+====================================================*/
+
+@keyframes cargando{
+
+    0%{
+
+        transform:translateX(-120%);
+
+    }
+
+    100%{
+
+        transform:translateX(350%);
+
+    }
+
+}
+
+
+/*====================================================
+=             PRELOADER - CELULAR
+====================================================*/
+
+@media(max-width:768px){
+
+    .preloader-contenido h1{
+
+        font-size:3rem;
+
+    }
+
+    .preloader-contenido p{
+
+        font-size:1rem;
+
+    }
+
+    .preloader-separador span{
+
+        width:55px;
+
+    }
+
+    .preloader-carga{
+
+        width:150px;
+
+    }
+
+}
+
+/*====================================================
+=          SALIDA DEL PRELOADER
+====================================================*/
+
+#preloader{
+
+    transition:opacity .8s ease;
+
+}
+
+#preloader.ocultar-preloader{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+
+/*====================================================
+=             ENTRADA DEL HERO
+====================================================*/
+
+.hero-texto,
+.hero-imagen{
+
+    opacity:0;
+
+}
+
+
+/* TÍTULO Y TEXTO ENTRAN DESDE LA IZQUIERDA */
+
+.hero-texto.entrada{
+
+    animation:entradaHeroIzquierda .9s ease forwards;
+
+}
+
+
+/* IMAGEN ENTRA DESDE LA DERECHA */
+
+.hero-imagen.entrada{
+
+    animation:entradaHeroDerecha .9s ease forwards;
+
+}
+
+
+/*====================================================
+=                 ANIMACIONES
+====================================================*/
+
+@keyframes entradaHeroIzquierda{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-70px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+@keyframes entradaHeroDerecha{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(70px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/*====================================================
+=        REFLEJO ANIMADO - BOTÓN CREACIONES
+====================================================*/
+
+.boton-principal{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* BRILLO QUE ATRAVIESA EL BOTÓN */
+
+.boton-principal::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-80%;
+
+    width:45%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    animation:brilloBoton 4s ease-in-out infinite;
+
+}
+
+
+/*====================================================
+=              ANIMACIÓN DEL REFLEJO
+====================================================*/
+
+@keyframes brilloBoton{
+
+    0%{
+
+        left:-80%;
+
+    }
+
+    25%{
+
+        left:130%;
+
+    }
+
+    100%{
+
+        left:130%;
+
+    }
+
+}
+
+/*====================================================
+=        ENTRADA ANIMADA DE LAS CREACIONES
+====================================================*/
+
+.tarjeta-producto{
+
+    opacity:0;
+
+    transform:translateY(50px) scale(.96);
+
+}
+
+
+/* Cuando se activa la animación */
+
+.tarjeta-producto.mostrar-tarjeta{
+
+    animation:aparecerTarjeta .8s ease forwards;
+
+}
+
+
+/*====================================================
+=                 ANIMACIÓN
+====================================================*/
+
+@keyframes aparecerTarjeta{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px) scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
