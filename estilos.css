@@ -2815,6 +2815,7 @@ a{
     display:block;
 
     width:100%;
+    height:320px;
 
     border-radius:18px;
 
@@ -2838,7 +2839,12 @@ a{
 
     .video-regalito video{
 
+        width:100%;
+        height:250px;
+
         border-radius:13px;
+
+        object-fit:cover;
 
     }
 
