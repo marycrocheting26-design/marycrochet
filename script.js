@@ -1,4 +1,5 @@
 
+
 document.addEventListener("DOMContentLoaded", () => {
 /* =====================================================
    VARIABLES DEL MODAL
@@ -377,4 +378,3 @@ window.addEventListener("load", () => {
 
 });
 });
-

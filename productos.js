@@ -30,7 +30,9 @@ const productos = {
             "img/colgante para papel higienico.jpg",
             "img/juego de baño lineas rojas y negras.jpg",
             "img/juego de baño marron lineas rojas.jpg",
-            "img/juego de baño marrones.jpg"
+            "img/juego de baño marrones.jpg",
+            "img/juego de baño verde agua con negro.jpg",
+            "img/juego de baño gris con rosa.png"
 
 
 
@@ -73,7 +75,10 @@ const productos = {
             "img/individuales gris sencillos.jpg",
             "img/individual rosado oscuro con blanco.jpg",
             "img/individual balnco con bordes verdes y rosa.jpg",
-            "img/individual con bordes de flores.jpg"
+            "img/individual con bordes de flores.jpg",
+            "img/individuales blancos con bordes rojos y verdes.jpg",
+            "img/individuales blancos con formas de flor.jpg",
+            "img/individuales rectang blancos.jpg"
 
 
 
@@ -110,7 +115,15 @@ const productos = {
             "img/camino de mesa rosado con flores blancas.jpg",
             "img/camino de mesa amarillo elegante.jpg",
             "img/camino de mesa largo canastita.jpg",
-            "img/camino de mesa blanco pino.jpg"
+            "img/camino de mesa blanco pino.jpg",
+            "img/camino de mesa floreado rosa con hojas.jpg",
+            "img/camino de mesa blanco con flores rositas.jpg",
+            "img/centro de mesa verde redondo.jpg",
+            "img/camino de mesa forma de gotas rosado.jpg",
+            "img/camino de mesa forma de gotas marron.jpg",
+            "img/camino de mesa forma de gotas marron con blanco.jpg",
+            "img/centro de mesa redondo con flor en el medio.png",
+            "img/camino de mesa forma de canasta.jpg"
 
 
 
@@ -193,7 +206,11 @@ const productos = {
             "img/alfombra con varios colores y flores.jpg",
             "img/alfombra con lineas azul oscuro y blanco.jpg",
             "img/alfombra grisesss.jpg",
-            "img/alfombra rosados.jpg"
+            "img/alfombra rosados.jpg",
+            "img/alfombras negras y rojas con rosas.jpg",
+            "img/alfombritas marrones con agujeros y rosas.jpg",
+            "img/alfombras amarillo y gris.jpg",
+            "img/alfombra corta y larga rojo con rosado.jpg"
 
 
 
