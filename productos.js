@@ -29,7 +29,8 @@ const productos = {
             "img/juego de baño rojo con corazon.jpg",
             "img/colgante para papel higienico.jpg",
             "img/juego de baño lineas rojas y negras.jpg",
-            "img/juego de baño marron lineas rojas.jpg"
+            "img/juego de baño marron lineas rojas.jpg",
+            "img/juego de baño marrones.jpg"
 
 
 
@@ -185,12 +186,17 @@ const productos = {
             "img/alfombras gris.jpg",
             "img/alfombras flores naranjas.jpg",
             "img/alfombras rojas con negras.png",
-            "img/alfombra larga for bordo.jpg",
+            "img/alfombra larga flor bordo.jpg",
             "img/alfombra violeta y negro.jpg",
             "img/alfombra larga flores rosas.jpg",
             "img/alfombra larga marron y blanco.jpg",
             "img/alfombra con varios colores y flores.jpg",
-            "img/alfombra con lineas azul oscuro y blanco.jpg"
+            "img/alfombra con lineas azul oscuro y blanco.jpg",
+            "img/alfombra grisesss.jpg",
+            "img/alfombra rosados.jpg"
+
+
+
     
         ]
 
