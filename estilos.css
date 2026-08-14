@@ -1,131 +1,810 @@
-/*==================================================
-=            SECCIÓN PRODUCTOS
-==================================================*/
+/* =========================================================
+   RESET GENERAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Nunito',sans-serif;
+    background:#fffdf9;
+    color:#5d4a40;
+}
+
+img{
+    max-width:100%;
+}
+
+button,
+a{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   CONTENEDOR GENERAL
+========================================================= */
+
+.contenedor{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+
+/* =========================================================
+   CABECERA
+========================================================= */
+
+.cabecera{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    padding:18px 0;
+
+    backdrop-filter:blur(12px);
+
+    background:rgba(255,255,255,.65);
+
+    border-bottom:1px solid rgba(255,255,255,.35);
+
+    transition:.35s;
+}
+
+.menu{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo{
+    text-decoration:none;
+
+    font-family:'Fraunces',serif;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:#8f5a43;
+
+    transition:.3s;
+}
+
+.logo:hover{
+    transform:scale(1.04);
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
+
+.navegacion{
+    display:flex;
+    align-items:center;
+    gap:40px;
+}
+
+.navegacion a{
+    position:relative;
+
+    text-decoration:none;
+
+    color:#5e4638;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.navegacion a::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:#c67a5b;
+
+    transition:.35s;
+}
+
+.navegacion a:hover{
+    color:#b66749;
+}
+
+.navegacion a:hover::after{
+    width:100%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #fffaf5,
+        #f8efe7
+    );
+
+    padding:80px 0;
+}
+
+.hero-contenido{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:60px;
+}
+
+.hero-texto{
+    opacity:0;
+}
+
+.hero-texto.entrada{
+    animation:entradaHeroIzquierda .9s ease forwards;
+}
+
+.hero-etiqueta{
+    display:inline-block;
+
+    background:#f5d9c9;
+
+    color:#8d5b44;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+}
+
+.hero-texto h1{
+    font-family:'Fraunces',serif;
+
+    font-size:4rem;
+
+    color:#7b4e38;
+
+    margin-bottom:20px;
+
+    line-height:1.1;
+}
+
+.hero-texto p{
+    font-size:1.15rem;
+
+    color:#5d4a40;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+}
+
+/*====================================================*
+*=              INSIGNIA DE ENVÍOS                    =*
+*====================================================*/
+
+.envios-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin:5px 0 25px;
+
+    padding:10px 18px;
+
+    background:#fff;
+
+    color:#8f5a43;
+
+    border:1px solid rgba(198,122,91,.25);
+
+    border-radius:30px;
+
+    font-family:'Nunito', sans-serif;
+
+    font-size:.95rem;
+
+    font-weight:700;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.06);
+
+}
+
+
+/* =========================================================
+   BOTÓN PRINCIPAL
+========================================================= */
+
+.boton-principal{
+    position:relative;
+
+    display:inline-block;
+
+    overflow:hidden;
+
+    padding:16px 35px;
+
+    background:#c67a5b;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+    transition:.35s;
+}
+
+.boton-principal:hover{
+    transform:translateY(-4px);
+
+    background:#b66749;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.18);
+}
+
+
+/* =========================================================
+   REFLEJO DEL BOTÓN PRINCIPAL
+========================================================= */
+
+.boton-principal::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-80%;
+
+    width:45%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    animation:brilloBoton 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   HERO IMAGEN
+========================================================= */
+
+.hero-imagen{
+    display:flex;
+
+    justify-content:center;
+
+    opacity:0;
+}
+
+.hero-imagen.entrada{
+    animation:entradaHeroDerecha .9s ease forwards;
+}
+
+.hero-imagen img{
+    width:100%;
+
+    max-width:520px;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.15);
+}
+
+
+
+
+/* =========================================================
+   ANIMACIONES HERO
+========================================================= */
+
+@keyframes entradaHeroIzquierda{
+
+    from{
+        opacity:0;
+        transform:translateX(-70px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+@keyframes entradaHeroDerecha{
+
+    from{
+        opacity:0;
+        transform:translateX(70px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+@keyframes brilloBoton{
+
+    0%{
+        left:-80%;
+    }
+
+    25%{
+        left:130%;
+    }
+
+    100%{
+        left:130%;
+    }
+
+}
+
+
+/* =========================================================
+   FRANJA EN MOVIMIENTO
+========================================================= */
+
+.franja-movimiento{
+    width:100%;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+        90deg,
+        #efd7d0,
+        #f7e5df,
+        #fbeee9,
+        #f7e5df,
+        #efd7d0
+    );
+
+    padding:18px 0;
+}
+
+.franja-contenido{
+    display:flex;
+
+    align-items:center;
+
+    gap:40px;
+
+    width:max-content;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    animation:moverFranja 22s linear infinite;
+}
+
+.franja-contenido span{
+    white-space:nowrap;
+
+    color:#8b5a50;
+
+    font-family:'Nunito',sans-serif;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    text-shadow:
+        0 1px 2px rgba(255,255,255,.8);
+}
+
+@keyframes moverFranja{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+
+/* =========================================================
+   SOBRE MARY
+========================================================= */
+
+.seccion-sobre{
+    padding:110px 0;
+
+    background:#fffaf5;
+}
+
+.sobre-contenido{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.sobre-imagen{
+    display:flex;
+
+    justify-content:center;
+}
+
+.sobre-imagen img{
+    width:100%;
+
+    max-width:480px;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 25px 45px rgba(0,0,0,.12);
+
+    transition:.45s;
+}
+
+.sobre-imagen img:hover{
+    transform:scale(1.02);
+}
+
+.subtitulo-seccion{
+    display:inline-block;
+
+    background:#f5d9c9;
+
+    color:#9a5e45;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+}
+
+.sobre-texto h2{
+    font-family:'Fraunces',serif;
+
+    font-size:3rem;
+
+    color:#7b4e38;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+}
+
+.sobre-texto p{
+    font-size:1.05rem;
+
+    color:#5d4a40;
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+}
+
+.frase-mary{
+    margin-top:40px;
+
+    padding:25px;
+
+    background:#fff;
+
+    border-left:5px solid #c67a5b;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.08);
+}
+
+.frase-mary span{
+    font-size:2rem;
+
+    display:block;
+
+    margin-bottom:10px;
+}
+
+.frase-mary p{
+    margin:0;
+
+    font-family:'Fraunces',serif;
+
+    font-size:1.3rem;
+
+    font-style:italic;
+
+    color:#8f5a43;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   SEPARADOR CREACIONES
+========================================================= */
+
+.separador-creaciones{
+    padding:90px 20px 40px;
+
+    text-align:center;
+
+    background:#fffdf9;
+}
+
+.icono-separador{
+    font-size:2.5rem;
+
+    display:block;
+
+    margin-bottom:15px;
+
+    color:#c67a5b;
+}
+
+.separador-creaciones h2{
+    font-family:'Fraunces',serif;
+
+    font-size:2.6rem;
+
+    color:#8f5a43;
+
+    margin-bottom:18px;
+}
+
+.separador-creaciones p{
+    max-width:650px;
+
+    margin:auto;
+
+    color:#6d5648;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   SECCIÓN PRODUCTOS
+========================================================= */
 
 .seccion-productos{
-    padding: 90px 8%;
+    padding:90px 8%;
+
     background:#fffaf5;
+}
+
+#productos{
+    text-align:center;
 }
 
 .titulo-seccion{
     text-align:center;
+
     font-size:2.5rem;
+
     color:#8b5e3c;
+
     margin-bottom:15px;
 }
 
 .descripcion-seccion{
     text-align:center;
+
     max-width:700px;
+
     margin:0 auto 60px;
+
     color:#666;
+
     font-size:1.05rem;
+
     line-height:1.8;
 }
 
-/*==================================================
-=            GRILLA PRODUCTOS
-==================================================*/
+
+/* =========================================================
+   GRILLA PRODUCTOS
+========================================================= */
 
 .grilla-productos{
-
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:35px;
 
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(320px,1fr)
+        );
+
+    gap:35px;
 }
 
-/*==================================================
-=            TARJETA PRODUCTO
-==================================================*/
+
+/* =========================================================
+   TARJETA PRODUCTO
+========================================================= */
 
 .tarjeta-producto{
-
     background:white;
+
     border-radius:25px;
+
     overflow:hidden;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.08);
 
     transition:.4s;
 
+    opacity:0;
+
+    transform:
+        translateY(50px)
+        scale(.96);
 }
 
 .tarjeta-producto:hover{
-
     transform:translateY(-8px);
 
-    box-shadow:0 20px 45px rgba(0,0,0,.15);
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.15);
+}
+
+.tarjeta-producto.mostrar-tarjeta{
+    animation:
+        aparecerTarjeta .8s ease forwards;
+}
+
+@keyframes aparecerTarjeta{
+
+    from{
+        opacity:0;
+
+        transform:
+            translateY(50px)
+            scale(.96);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
 
 }
 
-/*==================================================
-=            IMAGEN PRODUCTO
-==================================================*/
+
+/* =========================================================
+   CONTENEDOR IMAGEN PRODUCTO
+========================================================= */
 
 .contenedor-imagen{
-
     position:relative;
 
     overflow:hidden;
 
     height:320px;
-
 }
 
-.imagen-producto{
 
+/* =========================================================
+   IMAGEN PRODUCTO
+========================================================= */
+
+.imagen-producto{
     width:100%;
+
     height:100%;
 
     object-fit:cover;
 
-    transition:.5s;
-
+    transition:
+        transform .5s,
+        opacity .35s ease;
 }
 
 .tarjeta-producto:hover .imagen-producto{
-
     transform:scale(1.05);
-
 }
 
-/*==================================================
-=            CONTENIDO
-==================================================*/
+.fade{
+    opacity:0;
+}
+
+
+/* =========================================================
+   CONTENIDO PRODUCTO
+========================================================= */
 
 .contenido-producto{
-
     padding:25px;
-
 }
 
 .contenido-producto h3{
-
     font-size:1.5rem;
 
     margin-bottom:12px;
 
     color:#7b4f2d;
-
 }
 
 .contenido-producto p{
-
     color:#666;
 
     line-height:1.7;
 
     margin-bottom:25px;
-
 }
 
-/*==================================================
-=            BOTÓN
-==================================================*/
+
+/* =========================================================
+   BOTÓN PRODUCTO
+========================================================= */
 
 .boton-producto{
-
     display:inline-block;
 
     padding:13px 28px;
@@ -145,160 +824,82 @@
     cursor:pointer;
 
     transition:.3s;
-
 }
 
 .boton-producto:hover{
-
     background:#b56d43;
 
+    transform:translateY(-3px);
 }
 
-/*==================================================
-=            RESPONSIVE - CELULAR
-==================================================*/
 
-@media(max-width:768px){
+/* =========================================================
+   FLECHAS DE LAS TARJETAS
+========================================================= */
 
-    .contenedor-imagen{
+.flecha{
+    position:absolute;
 
-        height:240px;
+    top:50%;
 
-    }
+    transform:translateY(-50%);
 
-    .titulo-seccion{
+    width:42px;
 
-        font-size:2rem;
+    height:42px;
 
-    }
+    border:none;
 
+    border-radius:50%;
+
+    background:rgba(255,255,255,.85);
+
+    color:#8b5e3c;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    z-index:10;
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.15);
 }
 
-/*==================================================
-=            RESPONSIVE PRODUCTOS
-==================================================*/
+.flecha:hover{
+    background:#c67a5b;
 
-@media (max-width:768px){
+    color:white;
 
-    .seccion-productos{
-
-        padding:60px 20px;
-
-    }
-
-    .titulo-seccion{
-
-        font-size:2rem;
-
-    }
-
-    .descripcion-seccion{
-
-        font-size:.95rem;
-
-        margin-bottom:40px;
-
-    }
-
-    .grilla-productos{
-
-        grid-template-columns:1fr;
-
-        gap:25px;
-
-    }
-
-    .tarjeta-producto{
-
-        border-radius:20px;
-
-    }
-
-    .imagen-producto{
-
-        object-fit:cover;
-
-    }
-
-    .contenido-producto{
-
-        padding:20px;
-
-    }
-
-    .contenido-producto h3{
-
-        font-size:1.3rem;
-
-    }
-
-    .contenido-producto p{
-
-        font-size:.92rem;
-
-        line-height:1.6;
-
-        margin-bottom:20px;
-
-    }
-
-    .boton-producto{
-
-       display:block;
-
-        width:82%;
-
-        max-width:230px;
-
-        margin:18px auto 0;
-
-        padding:12px 16px;
-
-        font-size:.9rem;
-
-        box-sizing:border-box;
-
-    }
-
+    transform:
+        translateY(-50%)
+        scale(1.08);
 }
 
-/*==================================================
-=            RESPONSIVE FLECHAS
-==================================================*/
-
-@media(max-width:768px){
-
-    .flecha{
-
-        width:38px;
-
-        height:38px;
-
-        font-size:18px;
-
-    }
-
+.izquierda{
+    left:12px;
 }
 
-/* ---------- MODAL -----------*/
-@media(max-width:768px){
-
-    .modal{
-
-        width:92%;
-
-        max-height:90vh;
-
-    }
-
+.derecha{
+    right:12px;
 }
 
-/*======================
-        MODAL
-=======================*/
+
+/* =========================================================
+   MODAL
+========================================================= */
 
 .modal{
-
     display:none;
 
     position:fixed;
@@ -312,11 +913,9 @@
     align-items:center;
 
     z-index:9999;
-
 }
 
 .modal-contenido{
-
     background:#fff;
 
     width:90%;
@@ -334,44 +933,73 @@
     animation:aparecer .35s;
 
     position:relative;
+}
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+
+        transform:scale(1);
+    }
 
 }
 
-#modal-imagen{
 
+/* =========================================================
+   IMAGEN DEL MODAL
+========================================================= */
+
+.contenedor-imagen-modal{
+    position:relative;
+
+    overflow:hidden;
+}
+
+#modal-imagen{
     width:100%;
 
     height:100%;
 
     object-fit:cover;
 
+    transition:opacity .35s ease;
 }
 
+
+/* =========================================================
+   INFORMACIÓN MODAL
+========================================================= */
+
 .modal-info{
-
     padding:35px;
-
 }
 
 .modal-info h2{
-
     color:#8d5a35;
 
     margin-bottom:20px;
-
 }
 
 .modal-info p{
-
     line-height:1.7;
 
     margin-bottom:30px;
-
 }
 
-.cerrar-modal{
 
- position:absolute;
+/* =========================================================
+   CERRAR MODAL
+========================================================= */
+
+.cerrar-modal{
+    position:absolute;
 
     top:15px;
 
@@ -399,1943 +1027,155 @@
 
     border-radius:50%;
 
-    transition:0.3s ease;
-
-}
-
-@keyframes aparecer{
-
-from{
-
-opacity:0;
-
-transform:scale(.8);
-
-}
-
-to{
-
-opacity:1;
-
-transform:scale(1);
-
-}
-
-}
-
-
-/* ================= RESPONSIVE DEL MODAL ================= */
-
-@media(max-width:768px){
-
-/* ===== MODAL ===== */
-
-.modal-contenido{
-
-    grid-template-columns:1fr;
-
-    width:92%;
-
-    max-height:90vh;
-
-    overflow:auto;
-
-}
-
-
-#modal-imagen{
-
-    width:100%;
-
-    height:280px;
-
-    object-fit:cover;
-
-    border-radius:15px;
-
-}
-
-
-.modal-info{
-
-    padding:18px;
-
-    text-align:center;
-
-}
-
-
-.modal-info h2{
-
-    font-size:1.2rem;
-
-}
-
-
-.modal-info p{
-
-    font-size:.9rem;
-
-    line-height:1.5;
-
-}
-
-
-.modal-boton{
-
-    width:100%;
-
-    max-width:260px;
-
-    padding:11px 15px;
-
-    font-size:.85rem;
-
-}
-
-
-/* ===== X CERRAR MODAL ===== */
-
-.cerrar-modal{
-
-    top:10px;
-
-    right:10px;
-
-    color:white;
-
-    background:rgba(139,90,80,.75);
-
-    width:40px;
-
-    height:40px;
-
-    font-size:28px;
-
-    z-index:200;
-
-}
-
-
-
-/* ==========================
-   SOBRE MARY CELULAR
-========================== */
-
-
-.seccion-sobre{
-
-    padding:70px 20px;
-
-}
-
-
-.sobre-contenido{
-
-    display:flex !important;
-
-    flex-direction:column !important;
-
-    align-items:center !important;
-
-    gap:30px !important;
-
-   
-
-}
-
-
-.sobre-imagen{
-
-     width:100% !important;
-
-    display:flex !important;
-
-    justify-content:center !important;
-}
-
-
-.sobre-imagen img{
-
-    width:220px !important;
-
-    max-width:80% !important;
-
-    border-radius:25px;
-
-
-}
-
-
-/* TEXTO */
-
-.sobre-texto{
-
-    width:100% !important;
-
-    text-align:center !important;
-
-}
-
-
-.subtitulo-seccion{
-
-    margin-bottom:15px;
-
-
-}
-
-
-.sobre-texto h2{
-
-    font-size:1.8rem !important;
-
-    line-height:1.3 !important;
-
-}
-
-
-.sobre-texto p{
-
-    font-size:.95rem !important;
-
-    line-height:1.7 !important;
-
-    
-
-}
-
-
-/* FRASE FINAL */
-
-.frase-mary{
-
-    margin-top:25px !important;
-
-    padding:18px !important;
-
-}
-
-
-.frase-mary p{
-
-    font-size: .75rem !important;
-
-}
-
-}
-
-
-/*====================================================
-=        TRANSICIÓN DE IMÁGENES DEL CARRUSEL         =
-====================================================*/
-
-.imagen-producto,
-#modal-imagen{
-
-    transition: opacity .35s ease;
-
-}
-
-.fade{
-
-    opacity:0;
-
-}
-
-
-
-
-/*====================================================
-=                    HERO                            =
-====================================================*/
-
-.hero{
-
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    background:linear-gradient(135deg,#fffaf5,#f8efe7);
-    padding:80px 0;
-
-}
-
-.hero-contenido{
-
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
-    gap:60px;
-
-}
-
-.hero-texto{
-
-    animation:aparecerIzquierda 1s ease;
-
-}
-
-.hero-etiqueta{
-
-    display:inline-block;
-    background:#f5d9c9;
-    color:#8d5b44;
-    padding:8px 18px;
-    border-radius:30px;
-    font-size:.9rem;
-    font-weight:600;
-    margin-bottom:20px;
-
-}
-
-.hero-texto h1{
-
-    font-size:4rem;
-    color:#7b4e38;
-    margin-bottom:20px;
-    line-height:1.1;
-
-}
-
-.hero-texto p{
-
-    font-size:1.15rem;
-    color:#5d4a40;
-    line-height:1.8;
-    margin-bottom:35px;
-
-}
-
-.boton-principal{
-
-    display:inline-block;
-    padding:16px 35px;
-    background:#c67a5b;
-    color:white;
-    text-decoration:none;
-    border-radius:50px;
-    font-weight:bold;
-    transition:.35s;
-
-}
-
-.boton-principal:hover{
-
-    transform:translateY(-4px);
-    background:#b66749;
-    box-shadow:0 15px 30px rgba(0,0,0,.18);
-
-}
-
-.hero-imagen{
-
-    animation:aparecerDerecha 1s ease;
-    display:flex;
-    justify-content:center;
-
-}
-
-.hero-imagen img{
-
-    width:100%;
-    max-width:520px;
-    border-radius:30px;
-    box-shadow:0 20px 45px rgba(0,0,0,.15);
-
-}
-
-/*====================================================
-=                  ANIMACIONES                       =
-====================================================*/
-
-@keyframes aparecerIzquierda{
-
-    from{
-
-        opacity:0;
-        transform:translateX(-60px);
-
-    }
-
-    to{
-
-        opacity:1;
-        transform:translateX(0);
-
-    }
-
-}
-
-@keyframes aparecerDerecha{
-
-    from{
-
-        opacity:0;
-        transform:translateX(60px);
-
-    }
-
-    to{
-
-        opacity:1;
-        transform:translateX(0);
-
-    }
-
-}
-
-
-/*====================================================
-=                HERO RESPONSIVE                     =
-====================================================*/
-
-@media(max-width:768px){
-
-.hero{
-
-    padding:50px 20px;
-    min-height:auto;
-
-}
-
-.hero-contenido{
-
-    grid-template-columns:1fr;
-    text-align:center;
-    gap:40px;
-
-}
-
-.hero-texto h1{
-
-    font-size:2.6rem;
-
-}
-
-.hero-texto p{
-
-    font-size:1rem;
-
-}
-
-.hero-imagen img{
-
-    max-width:340px;
-
+    transition:.3s ease;
 }
 
-}
-
-
-
-/*====================================================
-=              FRANJA EN MOVIMIENTO                  =
-====================================================*/
-
-.franja-movimiento{
-
-    width:100%;
-    overflow:hidden;
-       background:linear-gradient(
-        90deg,
-        #efd7d0,
-        #f7e5df,
-        #fbeee9,
-        #f7e5df,
-        #efd7d0
-    );
-
-    padding:18px 0;
-
-}
-
-.franja-movimiento span{
-
-    color:#8b5a50;
-
-    font-family:'Nunito', sans-serif;
-
-    font-size:1rem;
-
-    font-weight:700;
-
-    letter-spacing:1px;
-
-    text-shadow:
-        0 1px 2px rgba(255,255,255,0.8);
-
-}
-
-.franja-contenido{
-
-    display:flex;
-    align-items:center;
-    gap:40px;
-    width:max-content;
-
-    color:white;
-    font-size:1rem;
-    font-weight:600;
-
-    animation:moverFranja 22s linear infinite;
-
-}
-
-.franja-contenido span{
-
-    white-space:nowrap;
-
-}
-
-@keyframes moverFranja{
-
-    from{
-
-        transform:translateX(0);
-
-    }
-
-    to{
-
-        transform:translateX(-50%);
-
-    }
-
-}
-
-/*====================================================
-=            FRANJA RESPONSIVE                       =
-====================================================*/
-
-.franja-movimiento{
-
-    padding:14px 0;
-
-}
-
-.franja-contenido{
-
-    gap:25px;
-    font-size:.9rem;
-
-}
-
-/*====================================================
-=                  CABECERA                          =
-====================================================*/
-
-.cabecera{
-
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-
-    padding:18px 0;
-
-    backdrop-filter:blur(12px);
-
-    background:rgba(255,255,255,.65);
-
-    border-bottom:1px solid rgba(255,255,255,.35);
-
-    transition:.35s;
-
-}
-
-.menu{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-}
-
-
-/*====================================================
-=                    LOGO                            =
-====================================================*/
-
-.logo{
-
-    text-decoration:none;
-
-    font-family:'Fraunces',serif;
-
-    font-size:2rem;
-
-    font-weight:700;
-
-    color:#8f5a43;
-
-    transition:.3s;
-
-}
-
-.logo:hover{
-
-    transform:scale(1.04);
-
-}
-
-
-/*====================================================
-=                 NAVEGACIÓN                         =
-====================================================*/
-
-.navegacion{
-
-    display:flex;
-    align-items:center;
-    gap:40px;
-
-}
-
-.navegacion a{
-
-    position:relative;
-
-    text-decoration:none;
-
-    color:#5e4638;
-
-    font-weight:700;
-
-    transition:.3s;
-
-}
-
-
-.navegacion a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    bottom:-8px;
-
-    width:0;
-
-    height:2px;
-
-    background:#c67a5b;
-
-    transition:.35s;
-
-}
-
-.navegacion a:hover{
-
-    color:#b66749;
-
-}
-
-.navegacion a:hover::after{
-
-    width:100%;
-
-}
-
-
-/*====================================================
-=             HEADER RESPONSIVE                      =
-====================================================*/
-
-@media(max-width:768px){
-
-.menu{
-
-    flex-direction:column;
-
-    gap:18px;
-
-}
-
-.logo{
-
-    font-size:1.7rem;
-
-}
-
-.navegacion{
-
-    gap:20px;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-}
-
-.navegacion a{
-
-    font-size:.95rem;
-
-}
-
-}
-
-/*====================================================
-=                  SOBRE MARY                        =
-====================================================*/
-
-.seccion-sobre{
-
-    padding:110px 0;
-    background:#fffaf5;
-
-}
-
-.sobre-contenido{
-
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
-
-}
-
-/*====================================================
-=                FOTO DE MARY                        =
-====================================================*/
-
-.sobre-imagen{
-
-    display:flex;
-    justify-content:center;
-
-}
-
-.sobre-imagen img{
-
-    width:100%;
-    max-width:480px;
-
-    border-radius:30px;
-
-    box-shadow:0 25px 45px rgba(0,0,0,.12);
-
-    transition:.45s;
-
-}
-
-.sobre-imagen img:hover{
-
-    transform:scale(1.02);
-
-}
-
-/*====================================================
-=                 TEXTO SOBRE MARY                   =
-====================================================*/
-
-.subtitulo-seccion{
-
-    display:inline-block;
-
-    background:#f5d9c9;
-
-    color:#9a5e45;
-
-    padding:8px 18px;
-
-    border-radius:30px;
-
-    font-weight:700;
-
-    margin-bottom:20px;
-
-}
-
-.sobre-texto h2{
-
-    font-family:'Fraunces',serif;
-
-    font-size:3rem;
-
-    color:#7b4e38;
-
-    line-height:1.2;
-
-    margin-bottom:25px;
-
-}
-
-.sobre-texto p{
-
-    font-size:1.05rem;
-
-    color:#5d4a40;
 
-    line-height:1.9;
-
-    margin-bottom:20px;
-
-}
-
-/*====================================================
-=                FRASE DE MARY                       =
-====================================================*/
-
-.frase-mary{
-
-    margin-top:40px;
-
-    padding:25px;
-
-    background:#fff;
-
-    border-left:5px solid #c67a5b;
-
-    border-radius:18px;
-
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
-
-}
-
-.frase-mary span{
-
-    font-size:2rem;
-
-    display:block;
-
-    margin-bottom:10px;
-
-}
-
-.frase-mary p{
-
-    margin:0;
-
-    font-family:'Fraunces',serif;
-
-    font-size:1.3rem;
-
-    font-style:italic;
-
-    color:#8f5a43;
-
-    line-height:1.6;
-
-}
-
-
-/*====================================================
-=           SEPARADOR CREACIONES                     =
-====================================================*/
-
-.separador-creaciones{
-
-    padding:90px 20px 40px;
-
-    text-align:center;
-
-    background:#fffdf9;
-
-}
-
-.icono-separador{
-
-    font-size:2.5rem;
-
-    display:block;
-
-    margin-bottom:15px;
-
-    color:#c67a5b;
-
-}
-
-.separador-creaciones h2{
-
-    font-family:'Fraunces',serif;
-
-    font-size:2.6rem;
-
-    color:#8f5a43;
-
-    margin-bottom:18px;
-
-}
-
-.separador-creaciones p{
-
-    max-width:650px;
-
-    margin:auto;
-
-    color:#6d5648;
-
-    line-height:1.8;
-
-}
-
-/*====================================================
-=            FLECHAS DEL MODAL
-====================================================*/
-
-.contenedor-imagen-modal{
-    position: relative;
-    overflow: hidden;
-}
+/* =========================================================
+   FLECHAS DEL MODAL
+========================================================= */
 
 .flecha-modal{
-
     position:absolute;
+
     top:50%;
+
     transform:translateY(-50%);
 
     width:50px;
+
     height:50px;
 
     border:none;
+
     border-radius:50%;
 
     background:rgba(255,255,255,.35);
+
     backdrop-filter:blur(8px);
+
     border:1px solid rgba(255,255,255,.4);
 
     color:#8b5e3c;
 
     font-size:24px;
+
     font-weight:bold;
 
     cursor:pointer;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     transition:.3s;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.18);
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.18);
 
     z-index:50;
-
 }
 
 .flecha-modal:hover{
-
     background:#c67a5b;
+
     color:white;
 
-    transform:translateY(-50%) scale(1.08);
-
+    transform:
+        translateY(-50%)
+        scale(1.08);
 }
 
 #modal-anterior{
-
     left:15px;
-
 }
 
 #modal-siguiente{
-
     right:15px;
-
-}
-
-/*====================================================
-=            FLECHAS DE LAS TARJETAS
-====================================================*/
-
-.flecha{
-
-    position:absolute;
-
-    top:50%;
-    transform:translateY(-50%);
-
-    width:42px;
-    height:42px;
-
-    border:none;
-    border-radius:50%;
-
-    background:rgba(255,255,255,.85);
-
-    color:#8b5e3c;
-
-    font-size:22px;
-    font-weight:bold;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    z-index:10;
-
-    box-shadow:0 8px 18px rgba(0,0,0,.15);
-
-}
-
-.flecha:hover{
-
-    background:#c67a5b;
-    color:white;
-
-    transform:translateY(-50%) scale(1.08);
-
-}
-
-.izquierda{
-
-    left:12px;
-
-}
-
-.derecha{
-
-    right:12px;
-
-}
-
-/*====================================================
-=        RESPONSIVE FLECHAS DEL MODAL
-====================================================*/
-
-@media(max-width:768px){
-
-    .flecha-modal{
-
-        width:40px;
-        height:40px;
-
-        font-size:18px;
-
-    }
-
-    #modal-anterior{
-
-        left:10px;
-
-    }
-
-    #modal-siguiente{
-
-        right:10px;
-
-    }
-
-}
-
-/*====================================================
-=     RESPONSIVE FLECHAS DE LAS TARJETAS
-====================================================*/
-
-@media(max-width:768px){
-
-    .flecha{
-
-        width:34px;
-        height:34px;
-
-        font-size:16px;
-
-    }
-
-    .izquierda{
-
-        left:8px;
-
-    }
-
-    .derecha{
-
-        right:8px;
-
-    }
-
-}
-
-.oculto {
-    display: none;
 }
 
 
-/* =====================================
-   BOTÓN VOLVER AL INICIO
-===================================== */
-
-.boton-volver {
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin: 25px auto 10px;
-
-    padding: 12px 25px;
-
-    background: #f8d7da;
-
-    color: #8a4b55;
-
-    text-decoration: none;
-
-    font-family: 'Nunito', sans-serif;
-
-    font-size: 0.95rem;
-
-    font-weight: 700;
-
-    border-radius: 30px;
-
-    border: 1px solid rgba(200,120,140,0.25);
-
-    box-shadow: 
-        0 8px 20px rgba(180,100,120,0.15);
-
-    transition: all 0.3s ease;
-
-}
-
-
-/* efecto PC cuando pasás el mouse */
-
-.boton-volver:hover {
-
-    background: #f3c1c8;
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 25px rgba(180,100,120,0.25);
-
-}
-
-
-/* efecto al tocar en celular */
-
-.boton-volver:active {
-
-    transform: scale(0.95);
-
-}
-
-#productos{
-
-text-align: center;
-
-}
-
-@media (max-width: 768px) {
-
-
-    .boton-volver {
-
-        width: 85%;
-
-        max-width: 280px;
-
-        padding: 13px 20px;
-
-        font-size: 0.9rem;
-
-        margin-top: 20px;
-
-    }
-
-
-
-}
-
-/*====================================================
-=                  CONTACTO                          =
-====================================================*/
-
-.seccion-contacto{
-
-    position:relative;
-
-    overflow:hidden;
-
-    padding:120px 8%;
-
-    background:linear-gradient(180deg,#fffdf9,#fff8f2);
-
-    background-image:
-    radial-gradient(rgba(212,138,92,.05) 1px, transparent 1px);
-
-    background-size:22px 22px;
-
-}
-
-.contacto-contenido{
-
-    position:relative;
-
-    z-index:2;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:70px;
-
-    align-items:center;
-
-}
-
-/*====================================================
-=          BOTÓN VOLVER - CONTACTO
-====================================================*/
-
-#volver-inicio-contacto{
-
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
-
-    margin:0 auto 50px;
-
-}
-
-/*====================================================
-=                TEXTO CONTACTO                      =
-====================================================*/
-
-.contacto-texto h2{
-
-    font-family:'Fraunces',serif;
-
-    font-size:3rem;
-
-    color:#7b4e38;
-
-    margin-bottom:25px;
-
-}
-
-.contacto-texto p{
-
-    color:#5d4a40;
-
-    line-height:1.9;
-
-    font-size:1.05rem;
-
-}
-
-/*====================================================
-=               TARJETA CONTACTO                     =
-====================================================*/
-
-/*====================================================
-=              TARJETA CONTACTO
-====================================================*/
-
-.tarjeta-contacto{
-
-    position:relative;
-
-    background:rgba(255,255,255,.92);
-
-    backdrop-filter:blur(10px);
-
-    padding:45px;
-
-    border-radius:35px;
-
-    border:1px solid rgba(212,138,92,.15);
-
-    box-shadow:
-        0 20px 45px rgba(0,0,0,.08),
-        0 0 0 8px rgba(255,255,255,.35);
-
-    transition:.45s;
-
-}
-
-.tarjeta-contacto:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:
-        0 28px 55px rgba(0,0,0,.12),
-        0 0 0 8px rgba(255,255,255,.45);
-
-}
-
-.tarjeta-contacto h3{
-
-    color:#8f5a43;
-
-    font-size:2rem;
-
-    margin-bottom:15px;
-
-}
-
-.tarjeta-contacto p{
-
-    color:#666;
-
-    margin-bottom:30px;
-
-}
-
-/*====================================================
-=              FONDO DECORATIVO
-====================================================*/
-
-.fondo-contacto{
-
-    position:absolute;
-
-    inset:0;
-
-    overflow:hidden;
-
-    pointer-events:none;
-
-    z-index:1;
-
-}
-
-/*====================================================
-=          DETALLE ARTESANAL
-====================================================*/
-
-.tarjeta-contacto::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:18px;
-    left:18px;
-    right:18px;
-    bottom:18px;
-
-    border:2px dashed rgba(212,138,92,.25);
-
-    border-radius:25px;
-
-    pointer-events:none;
-
-}
-
-
-
-/*====================================================
-=              ANIMACIÓN TARJETA
-====================================================*/
-
-@keyframes flotarTarjeta{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-6px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-}
-
-.tarjeta-contacto{
-
-    animation:flotarTarjeta 6s ease-in-out infinite;
-
-}
-
-/*====================================================
-=                  BOTONES                           =
-====================================================*/
-
-.boton-contacto{
-
-    display:block;
-
-    text-align:center;
-
-    text-decoration:none;
-
-    padding:16px;
-
-    border-radius:50px;
-
-    margin-bottom:18px;
-
-    font-weight:bold;
-
-    transition:.35s;
-
-}
-
-.whatsapp{
-
-    background:#25D366;
-
-    color:white;
-
-}
-
-.whatsapp:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 15px 30px rgba(37,211,102,.30);
-
-}
-
-.instagram{
-
-    background:linear-gradient(
-        45deg,
-        #833AB4,
-        #E1306C,
-        #FCAF45
-    );
-
-    color:white;
-
-}
-
-.instagram:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 15px 30px rgba(225,48,108,.30);
-
-}
-
-/*====================================================
-=          DECORACIÓN CROCHET
-====================================================*/
-
-.ovillo{
-
-    position:absolute;
-
-    font-size:120px;
-
-    opacity:.10;
-
-    z-index:1;
-
-    user-select:none;
-
-}
-
-.ovillo-1{
-
-    top:40px;
-
-    right:50px;
-
-}
-
-.ovillo-2{
-
-    bottom:30px;
-
-    left:40px;
-
-}
-
-.flor{
-
-    position:absolute;
-
-    font-size:55px;
-
-    opacity:.12;
-
-    z-index:1;
-
-}
-
-.flor-1{
-
-    top:220px;
-
-    left:8%;
-
-}
-
-.flor-2{
-
-    bottom:120px;
-
-    right:10%;
-
-}
-
-/*====================================================
-=           SEPARADOR CONTACTO
-====================================================*/
-
-.separador-contacto{
-
-    padding:90px 20px 40px;
-
-    text-align:center;
-
-    background:#fffdf9;
-
-}
-
-.separador-contacto h2{
-
-    font-family:'Fraunces',serif;
-
-    font-size:2.6rem;
-
-    color:#8f5a43;
-
-    margin-bottom:18px;
-
-}
-
-.separador-contacto p{
-
-    max-width:650px;
-
-    margin:auto;
-
-    color:#6d5648;
-
-    line-height:1.8;
-
-}
-
-/*====================================================
-=                HILO DECORATIVO
-====================================================*/
-
-.hilo{
-
-    position:absolute;
-
-    top:110px;
-
-    left:-80px;
-
-    width:135%;
-
-    height:520px;
-
-    border:4px solid #d8b6a2;
-
-    border-color:#d8b6a2 transparent transparent transparent;
-
-    border-radius:50%;
-
-    opacity:.25;
-
-    z-index:0;
-
-}
-
-/*====================================================
-=              INFORMACIÓN EXTRA
-====================================================*/
-
-.info-extra{
-
-    margin-top:30px;
-
-    padding-top:20px;
-
-    border-top:1px solid #f0e4db;
-
-}
-
-.info-extra p{
-
-    margin:12px 0;
-
-    color:#7b5a49;
-
-    font-size:.95rem;
-
-}
-
-
-
-/*====================================================
-=                  FOOTER
-====================================================*/
-
-.footer{
-
-    background:#8f5a43;
-
-    color:white;
-
-    padding:45px 8% 18px;
-
-}
-
-.footer-contenido{
-
-    display:grid;
-
-    grid-template-columns:2fr 1fr 1fr;
-
-    gap: 35px;
-
-}
-
-
-.footer h4{
-
-    font-family:'Fraunces',serif;
-
-    font-size: 1.4rem;
-
-    margin-bottom:15px;
-
-}
-
-.footer p{
-
-    line-height:1.5;
-
-    margin-bottom:10px;
-
-    opacity:.9;
-
-    font-size:.95rem;
-
-}
-
-.footer a{
-
-    display:block;
-
-    color:white;
-
-    text-decoration:none;
-
-    margin-bottom:12px;
-
-    transition:.3s;
-
-}
-
-.footer a:hover{
-
-    transform:translateX(8px);
-
-    color:#ffe7d8;
-
-}
-
-.footer-copy{
-
-    text-align:center;
-
-    margin-top:35px;
-
-    padding-top:18px;
-
-    border-top:1px solid rgba(255,255,255,.2);
-
-    opacity:.85;
-
-    font-size:.9rem;
-
-}
-
-
-
-/*====================================================
-=              FOOTER RESPONSIVE
-====================================================*/
-
-@media(max-width:768px){
-
-    .footer{
-
-        padding: 35px 20px 15px;
-
-    }
-
-    .footer-logo h4{
-
-    font-size:1.2rem;
-
-}
-
-.footer p{
-
-    font-size:.9rem;
-
-}
-
-.footer-copy{
-
-    margin-top:25px;
-
-    font-size:.8rem;
-}
-
-.footer-contenido{
-
-grid-template-columns:1fr;
-
-gap:35px;
-
-text-align:center;
-
-}
-
-.footer a:hover{
-
-    transform:none;
-
-    }
-
-
-}
-
-
-
-
-/*====================================================
-=            SECCIONES OCULTAS
-====================================================*/
+/* =========================================================
+   SECCIONES OCULTAS
+========================================================= */
 
 .oculto{
-
     display:none;
-
 }
 
 
-/*====================================================
-=            CONTACTO RESPONSIVE
-====================================================*/
+/* =========================================================
+   BOTÓN VOLVER
+========================================================= */
 
-@media(max-width:768px){
+.boton-volver{
+    display:inline-flex;
 
-    .seccion-contacto{
+    align-items:center;
 
-        padding:70px 20px;
+    justify-content:center;
 
-    }
+    margin:25px auto 10px;
 
-    #volver-inicio-contacto{
+    padding:12px 25px;
 
-        display:flex;
+    background:#f8d7da;
 
-        justify-content:center;
+    color:#8a4b55;
 
-        margin:0 auto 35px;
+    text-decoration:none;
 
-        width:85%;
+    font-family:'Nunito',sans-serif;
 
-        max-width:280px;
+    font-size:.95rem;
 
-    }
+    font-weight:700;
 
-    .contacto-contenido{
+    border-radius:30px;
 
-        grid-template-columns:1fr;
+    border:1px solid rgba(200,120,140,.25);
 
-        gap:35px;
+    box-shadow:
+        0 8px 20px rgba(180,100,120,.15);
 
-    }
-
-    .contacto-texto{
-
-        text-align:center;
-
-    }
-
-    .contacto-texto h2{
-
-        font-size:2rem;
-
-    }
-
-    .contacto-texto p{
-
-        font-size:.95rem;
-
-        line-height:1.7;
-
-    }
-
-    .tarjeta-contacto{
-
-        padding:28px 22px;
-
-        border-radius:25px;
-
-    }
-
-    .tarjeta-contacto h3{
-
-        font-size:1.5rem;
-
-        text-align:center;
-
-    }
-
-    .tarjeta-contacto p{
-
-        font-size:.9rem;
-
-        text-align:center;
-
-    }
-
-    .boton-contacto{
-
-        width:85%;
-
-        margin-left:auto;
-
-        margin-right:auto;
-
-        padding:12px 15px;
-
-        font-size:.9rem;
-
-        border-radius:40px;
-
-
-    }
-
-    .info-extra{
-
-        text-align:center;
-
-    }
-
-    .tarjeta-contacto::after{
-
-    font-size:25px;
-
+    transition:.3s ease;
 }
 
+.boton-volver:hover{
+    background:#f3c1c8;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(180,100,120,.25);
 }
 
-/*====================================================
-=        OVILLO RECORRIENDO TARJETA CONTACTO
-====================================================*/
-
-.tarjeta-contacto::after{
-
-    content:"🧶";
-
-    position:absolute;
-
-    font-size:32px;
-
-    top:-18px;
-
-    left:-18px;
-
-    z-index:5;
-
-    animation:
-    moverOvillo 18s linear infinite,
-    girarOvillo 5s linear infinite;
-
+.boton-volver:active{
+    transform:scale(.95);
 }
 
 
-/* RECORRIDO */
-
-@keyframes moverOvillo{
-
-    0%{
-        top:-18px;
-        left:-18px;
-    }
-
-
-    25%{
-        top:-18px;
-        left:calc(100% - 20px);
-    }
-
-
-    50%{
-        top:calc(100% - 20px);
-        left:calc(100% - 20px);
-    }
-
-
-    75%{
-        top:calc(100% - 20px);
-        left:-18px;
-    }
-
-
-    100%{
-        top:-18px;
-        left:-18px;
-    }
-
-}
-
-
-/* GIRO DEL OVILLO */
-
-@keyframes girarOvillo{
-
-    from{
-        transform:rotate(0deg);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
-
-}
-
-/*====================================================*
-*=              GALERÍA DE DISEÑOS                    =*
-*====================================================*/
+/* =========================================================
+   GALERÍA
+========================================================= */
 
 .pagina-galeria{
-
     min-height:100vh;
 
     padding:120px 8% 80px;
 
     background:#fffaf5;
-
 }
 
-
-/*====================================================*
-*=                  ENCABEZADO                       =*
-*====================================================*/
-
 .encabezado-galeria{
-
     text-align:center;
 
     margin-bottom:55px;
-
 }
 
 .encabezado-galeria h1{
-
     font-family:'Fraunces',serif;
 
     font-size:3rem;
@@ -2343,27 +1183,24 @@ text-align:center;
     color:#7b4e38;
 
     margin-bottom:15px;
-
 }
 
 .encabezado-galeria p{
-
     color:#6d5648;
 
     font-size:1rem;
-
 }
 
 
-/*====================================================*
-*=                    GRILLA                         =*
-*====================================================*/
+/* =========================================================
+   GRILLA GALERÍA
+========================================================= */
 
 #galeria-productos{
-
     display:grid;
 
-    grid-template-columns:repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3,1fr);
 
     gap:28px;
 
@@ -2375,12 +1212,12 @@ text-align:center;
 }
 
 
-/*====================================================*
-*=              TARJETA DE FOTO                      =*
-*====================================================*/
+/* =========================================================
+   TARJETA GALERÍA
+========================================================= */
 
 .tarjeta-galeria{
- position:relative;
+    position:relative;
 
     background:#fffdf9;
 
@@ -2399,18 +1236,13 @@ text-align:center;
 }
 
 .tarjeta-galeria:hover{
-
     transform:translateY(-6px);
 
     box-shadow:
         0 18px 40px rgba(0,0,0,.12);
-
 }
 
-/* DETALLE INTERIOR */
-
 .tarjeta-galeria::before{
-
     content:"";
 
     position:absolute;
@@ -2422,17 +1254,10 @@ text-align:center;
     border-radius:17px;
 
     pointer-events:none;
-
 }
 
-
-/*====================================================*
-*=                    IMAGEN                         =*
-*====================================================*/
-
 .tarjeta-galeria img{
-
-   display:block;
+    display:block;
 
     width:100%;
 
@@ -2445,41 +1270,25 @@ text-align:center;
     cursor:pointer;
 
     transition:.35s ease;
-
 }
 
 .tarjeta-galeria:hover img{
-
-      transform:scale(1.03);
-
-}
-
-.tarjeta-galeria:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:
-        0 16px 35px rgba(80,50,35,.12);
-
+    transform:scale(1.03);
 }
 
 
-/*====================================================*
-*=               BOTÓN VOLVER                        =*
-*====================================================*/
+/* =========================================================
+   VOLVER GALERÍA
+========================================================= */
 
 .volver-galeria{
-
     display:flex;
-
     justify-content:center;
-
-    margin-top:55px;
-
+    margin-top:90px;
 }
 
-.volver-galeria a{
 
+.volver-galeria a{
     display:inline-flex;
 
     align-items:center;
@@ -2506,96 +1315,20 @@ text-align:center;
         0 8px 20px rgba(180,100,120,.15);
 
     transition:.3s ease;
-
 }
 
 .volver-galeria a:hover{
-
     transform:translateY(-3px);
 
     background:#f3c1c8;
-
 }
 
 
-/*====================================================*
-*=                GALERÍA CELULAR                    =*
-*====================================================*/
-
-@media(max-width:768px){
-
-    .pagina-galeria{
-
-        padding:100px 20px 50px;
-
-    }
-
-    .encabezado-galeria{
-
-        margin-bottom:35px;
-
-    }
-
-    .encabezado-galeria h1{
-
-        font-size:2.2rem;
-
-    }
-
-    .encabezado-galeria p{
-
-        font-size:.9rem;
-
-    }
-
-    #galeria-productos{
-
-         grid-template-columns:repeat(2, 1fr);
-
-        gap:16px;
-
-        margin:30px auto;
-
-        padding:0 15px;
-
-    }
-
-    .tarjeta-galeria{
-
-        padding:7px;
-
-        border-radius:18px;
-
-    }
-
-    .tarjeta-galeria::before{
-
-        inset:4px;
-
-        border-radius:14px;
-
-    }
-
-    .tarjeta-galeria img{
-
-          border-radius:13px;
-
-    }
-
-    .volver-galeria{
-
-        margin-top:40px;
-
-    }
-
-}
-
-/*====================================================*
-=              VISOR DE IMAGEN                       =
-*====================================================*/
+/* =========================================================
+   VISOR DE IMAGEN
+========================================================= */
 
 .visor-imagen{
-
     position:fixed;
 
     inset:0;
@@ -2621,31 +1354,17 @@ text-align:center;
     pointer-events:none;
 
     transition:.3s ease;
-
 }
 
-
-/*====================================================*
-=              VISOR ACTIVO                          =
-*====================================================*/
-
 .visor-imagen.activo{
-
     opacity:1;
 
     visibility:visible;
 
     pointer-events:auto;
-
 }
 
-
-/*====================================================*
-=              IMAGEN AMPLIADA                       =
-*====================================================*/
-
 #imagen-ampliada{
-
     display:block;
 
     max-width:90vw;
@@ -2666,27 +1385,18 @@ text-align:center;
     transform:scale(.92);
 
     transition:.3s ease;
-
 }
-
-
-/*====================================================*
-=              ANIMACIÓN DE ENTRADA                  =
-*====================================================*/
 
 .visor-imagen.activo #imagen-ampliada{
-
     transform:scale(1);
-
 }
 
 
-/*====================================================*
-=                  BOTÓN X                           =
-*====================================================*/
+/* =========================================================
+   CERRAR VISOR
+========================================================= */
 
 .cerrar-imagen{
-
     position:absolute;
 
     top:20px;
@@ -2723,74 +1433,523 @@ text-align:center;
 
     box-shadow:
         0 8px 20px rgba(0,0,0,.2);
-
 }
 
-
 .cerrar-imagen:hover{
-
     transform:scale(1.08);
 
     background:white;
+}
+
+
+/* =========================================================
+   CONTACTO
+========================================================= */
+
+.seccion-contacto{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:120px 8%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffdf9,
+            #fff8f2
+        );
+
+    background-image:
+        radial-gradient(
+            rgba(212,138,92,.05) 1px,
+            transparent 1px
+        );
+
+    background-size:22px 22px;
+}
+
+.contacto-contenido{
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+#volver-inicio-contacto{
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:0 auto 50px;
+}
+
+.contacto-texto h2{
+    font-family:'Fraunces',serif;
+
+    font-size:3rem;
+
+    color:#7b4e38;
+
+    margin-bottom:25px;
+}
+
+.contacto-texto p{
+    color:#5d4a40;
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+}
+
+
+/* =========================================================
+   TARJETA CONTACTO
+========================================================= */
+
+.tarjeta-contacto{
+    position:relative;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(10px);
+
+    padding:45px;
+
+    border-radius:35px;
+
+    border:1px solid rgba(212,138,92,.15);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.08),
+        0 0 0 8px rgba(255,255,255,.35);
+
+    transition:.45s;
+
+    animation:
+        flotarTarjeta 6s ease-in-out infinite;
+}
+
+.tarjeta-contacto:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 28px 55px rgba(0,0,0,.12),
+        0 0 0 8px rgba(255,255,255,.45);
+}
+
+.tarjeta-contacto h3{
+    color:#8f5a43;
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+}
+
+.tarjeta-contacto p{
+    color:#666;
+
+    margin-bottom:30px;
+}
+
+.tarjeta-contacto::before{
+    content:"";
+
+    position:absolute;
+
+    top:18px;
+    left:18px;
+    right:18px;
+    bottom:18px;
+
+    border:
+        2px dashed rgba(212,138,92,.25);
+
+    border-radius:25px;
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   OVILLO ANIMADO
+========================================================= */
+
+.tarjeta-contacto::after{
+    content:"🧶";
+
+    position:absolute;
+
+    font-size:32px;
+
+    top:-18px;
+
+    left:-18px;
+
+    z-index:5;
+
+    animation:
+        moverOvillo 18s linear infinite,
+        girarOvillo 5s linear infinite;
+}
+
+@keyframes moverOvillo{
+
+    0%{
+        top:-18px;
+        left:-18px;
+    }
+
+    25%{
+        top:-18px;
+        left:calc(100% - 20px);
+    }
+
+    50%{
+        top:calc(100% - 20px);
+        left:calc(100% - 20px);
+    }
+
+    75%{
+        top:calc(100% - 20px);
+        left:-18px;
+    }
+
+    100%{
+        top:-18px;
+        left:-18px;
+    }
+
+}
+
+@keyframes girarOvillo{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes flotarTarjeta{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
 
 }
 
 
-/*====================================================*
-=              VISOR - TELÉFONO                      =
-*====================================================*/
+/* =========================================================
+   BOTONES CONTACTO
+========================================================= */
 
-@media(max-width:768px){
+.boton-contacto{
+    display:block;
 
-    .visor-imagen{
+    text-align:center;
 
-        padding:15px;
+    text-decoration:none;
 
-    }
+    padding:16px;
 
+    border-radius:50px;
 
-    #imagen-ampliada{
+    margin-bottom:18px;
 
-        max-width:94vw;
+    font-weight:bold;
 
-        max-height:82vh;
+    transition:.35s;
+}
 
-        border-radius:14px;
+.whatsapp{
+    background:#25D366;
 
-    }
+    color:white;
+}
 
+.whatsapp:hover{
+    transform:translateY(-4px);
 
-    .cerrar-imagen{
+    box-shadow:
+        0 15px 30px rgba(37,211,102,.30);
+}
 
-        top:15px;
+.instagram{
+    background:linear-gradient(
+        45deg,
+        #833AB4,
+        #E1306C,
+        #FCAF45
+    );
 
-        right:15px;
+    color:white;
+}
 
-        width:40px;
+.instagram:hover{
+    transform:translateY(-4px);
 
-        height:40px;
-
-        font-size:22px;
-
-    }
-
+    box-shadow:
+        0 15px 30px rgba(225,48,108,.30);
 }
 
 
-/*====================================================
-=             PANTALLA DE BIENVENIDA
-====================================================*/
+/* =========================================================
+   DECORACIÓN CONTACTO
+========================================================= */
+
+.fondo-contacto{
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:1;
+}
+
+.ovillo{
+    position:absolute;
+
+    font-size:120px;
+
+    opacity:.10;
+
+    z-index:1;
+
+    user-select:none;
+}
+
+.ovillo-1{
+    top:40px;
+
+    right:50px;
+}
+
+.ovillo-2{
+    bottom:30px;
+
+    left:40px;
+}
+
+.flor{
+    position:absolute;
+
+    font-size:55px;
+
+    opacity:.12;
+
+    z-index:1;
+}
+
+.flor-1{
+    top:220px;
+
+    left:8%;
+}
+
+.flor-2{
+    bottom:120px;
+
+    right:10%;
+}
+
+
+/* =========================================================
+   SEPARADOR CONTACTO
+========================================================= */
+
+.separador-contacto{
+    padding:90px 20px 40px;
+
+    text-align:center;
+
+    background:#fffdf9;
+}
+
+.separador-contacto h2{
+    font-family:'Fraunces',serif;
+
+    font-size:2.6rem;
+
+    color:#8f5a43;
+
+    margin-bottom:18px;
+}
+
+.separador-contacto p{
+    max-width:650px;
+
+    margin:auto;
+
+    color:#6d5648;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   HILO DECORATIVO
+========================================================= */
+
+.hilo{
+    position:absolute;
+
+    top:110px;
+
+    left:-80px;
+
+    width:135%;
+
+    height:520px;
+
+    border:4px solid #d8b6a2;
+
+    border-color:
+        #d8b6a2
+        transparent
+        transparent
+        transparent;
+
+    border-radius:50%;
+
+    opacity:.25;
+
+    z-index:0;
+}
+
+
+/* =========================================================
+   INFORMACIÓN EXTRA
+========================================================= */
+
+.info-extra{
+    margin-top:30px;
+
+    padding-top:20px;
+
+    border-top:1px solid #f0e4db;
+}
+
+.info-extra p{
+    margin:12px 0;
+
+    color:#7b5a49;
+
+    font-size:.95rem;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    background:#8f5a43;
+
+    color:white;
+
+    padding:45px 8% 18px;
+}
+
+.footer-contenido{
+    display:grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap:35px;
+}
+
+.footer h4{
+    font-family:'Fraunces',serif;
+
+    font-size:1.4rem;
+
+    margin-bottom:15px;
+}
+
+.footer p{
+    line-height:1.5;
+
+    margin-bottom:10px;
+
+    opacity:.9;
+
+    font-size:.95rem;
+}
+
+.footer a{
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+}
+
+.footer a:hover{
+    transform:translateX(8px);
+
+    color:#ffe7d8;
+}
+
+.footer-copy{
+    text-align:center;
+
+    margin-top:35px;
+
+    padding-top:18px;
+
+    border-top:
+        1px solid rgba(255,255,255,.2);
+
+    opacity:.85;
+
+    font-size:.9rem;
+}
+
+
+/* =========================================================
+   PRELOADER
+========================================================= */
 
 #preloader{
-
     position:fixed;
 
     inset:0;
 
     width:100%;
+
     height:100vh;
 
-    background-image:url("img/imagen\ fondo\ cargando.png");
+    background-image:
+        url("img/imagen fondo cargando.png");
 
     background-size:cover;
 
@@ -2806,28 +1965,22 @@ text-align:center;
 
     z-index:99999;
 
+    transition:opacity .8s ease;
 }
 
+#preloader.ocultar-preloader{
+    opacity:0;
 
-/*====================================================
-=             CONTENIDO CENTRAL
-====================================================*/
+    pointer-events:none;
+}
 
 .preloader-contenido{
-
     text-align:center;
 
     color:#7b4e38;
-
 }
 
-
-/*====================================================
-=                 NOMBRE
-====================================================*/
-
 .preloader-contenido h1{
-
     font-family:'Fraunces',serif;
 
     font-size:4.5rem;
@@ -2839,16 +1992,9 @@ text-align:center;
     color:#7b4e38;
 
     letter-spacing:1px;
-
 }
 
-
-/*====================================================
-=              SEPARADOR CON CORAZÓN
-====================================================*/
-
 .preloader-separador{
-
     display:flex;
 
     align-items:center;
@@ -2858,11 +2004,9 @@ text-align:center;
     gap:15px;
 
     margin-bottom:20px;
-
 }
 
 .preloader-separador span{
-
     width:90px;
 
     height:2px;
@@ -2870,26 +2014,17 @@ text-align:center;
     background:#d88d7b;
 
     opacity:.8;
-
 }
 
 .preloader-separador strong{
-
     font-size:1.3rem;
 
     color:#d47f6d;
 
     font-weight:400;
-
 }
 
-
-/*====================================================
-=                   FRASE
-====================================================*/
-
 .preloader-contenido p{
-
     font-family:'Nunito',sans-serif;
 
     font-size:1.15rem;
@@ -2897,16 +2032,9 @@ text-align:center;
     color:#8f5a43;
 
     margin:0 0 28px;
-
 }
 
-
-/*====================================================
-=                  BARRA DE CARGA
-====================================================*/
-
 .preloader-carga{
-
     width:180px;
 
     height:6px;
@@ -2919,12 +2047,11 @@ text-align:center;
 
     margin:0 auto 12px;
 
-    box-shadow:0 2px 8px rgba(180,100,90,.12);
-
+    box-shadow:
+        0 2px 8px rgba(180,100,90,.12);
 }
 
 .preloader-carga span{
-
     display:block;
 
     width:45%;
@@ -2935,17 +2062,11 @@ text-align:center;
 
     border-radius:20px;
 
-    animation:cargando 2.5s ease-in-out infinite;
-
+    animation:
+        cargando 2.5s ease-in-out infinite;
 }
 
-
-/*====================================================
-=                TEXTO CARGANDO
-====================================================*/
-
 .preloader-texto-carga{
-
     font-family:'Nunito',sans-serif;
 
     font-size:.85rem;
@@ -2953,268 +2074,562 @@ text-align:center;
     letter-spacing:4px;
 
     color:#9a6655;
-
 }
-
-
-/*====================================================
-=                  ANIMACIÓN CARGA
-====================================================*/
 
 @keyframes cargando{
 
     0%{
-
         transform:translateX(-120%);
-
     }
 
     100%{
-
         transform:translateX(350%);
-
     }
 
 }
 
 
-/*====================================================
-=             PRELOADER - CELULAR
-====================================================*/
+/* =========================================================
+   RESPONSIVE - CELULAR
+========================================================= */
 
 @media(max-width:768px){
 
+    /* ---------- HEADER ---------- */
+
+    .cabecera{
+        padding:14px 0;
+    }
+
+    .menu{
+        flex-direction:column;
+
+        gap:18px;
+    }
+
+    .logo{
+        font-size:1.7rem;
+    }
+
+    .navegacion{
+        gap:20px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+
+    .navegacion a{
+        font-size:.95rem;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero{
+        padding:50px 20px;
+
+        min-height:auto;
+    }
+
+    .hero-contenido{
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:40px;
+    }
+
+    .hero-texto h1{
+        font-size:2.6rem;
+    }
+
+    .hero-texto p{
+        font-size:1rem;
+    }
+
+    .hero-imagen img{
+        max-width:340px;
+    }
+
+
+    /* ---------- FRANJA ---------- */
+
+    .franja-movimiento{
+        padding:14px 0;
+    }
+
+    .franja-contenido{
+        gap:25px;
+
+        font-size:.9rem;
+    }
+
+    .franja-contenido span{
+        font-size:.9rem;
+    }
+
+    .envios-badge{
+
+    font-size:.85rem;
+
+    padding:9px 16px;
+
+    margin:5px auto 22px;
+    }
+
+
+
+
+    /* ---------- SOBRE MARY ---------- */
+
+    .seccion-sobre{
+        padding:70px 20px;
+    }
+
+    .sobre-contenido{
+        display:flex !important;
+
+        flex-direction:column !important;
+
+        align-items:center !important;
+
+        gap:30px !important;
+    }
+
+    .sobre-imagen{
+        width:100% !important;
+
+        display:flex !important;
+
+        justify-content:center !important;
+    }
+
+    .sobre-imagen img{
+        width:220px !important;
+
+        max-width:80% !important;
+
+        border-radius:25px;
+    }
+
+    .sobre-texto{
+        width:100% !important;
+
+        text-align:center !important;
+    }
+
+    .sobre-texto h2{
+        font-size:1.8rem !important;
+
+        line-height:1.3 !important;
+    }
+
+    .sobre-texto p{
+        font-size:.95rem !important;
+
+        line-height:1.7 !important;
+    }
+
+    .subtitulo-seccion{
+        margin-bottom:15px;
+    }
+
+    .frase-mary{
+        margin-top:25px !important;
+
+        padding:18px !important;
+    }
+
+    .frase-mary p{
+        font-size:.75rem !important;
+    }
+
+
+    /* ---------- PRODUCTOS ---------- */
+
+    .seccion-productos{
+        padding:60px 20px;
+    }
+
+    .titulo-seccion{
+        font-size:2rem;
+    }
+
+    .descripcion-seccion{
+        font-size:.95rem;
+
+        margin-bottom:40px;
+    }
+
+    .grilla-productos{
+        grid-template-columns:1fr;
+
+        gap:25px;
+    }
+
+    .tarjeta-producto{
+        border-radius:20px;
+    }
+
+    .contenedor-imagen{
+        height:240px;
+    }
+
+    .imagen-producto{
+        object-fit:cover;
+    }
+
+    .contenido-producto{
+        padding:20px;
+    }
+
+    .contenido-producto h3{
+        font-size:1.3rem;
+    }
+
+    .contenido-producto p{
+        font-size:.92rem;
+
+        line-height:1.6;
+
+        margin-bottom:20px;
+    }
+
+    .boton-producto{
+        display:block;
+
+        width:82%;
+
+        max-width:230px;
+
+        margin:18px auto 0;
+
+        padding:12px 16px;
+
+        font-size:.9rem;
+
+        box-sizing:border-box;
+    }
+
+
+    /* ---------- FLECHAS TARJETAS ---------- */
+
+    .flecha{
+        width:34px;
+
+        height:34px;
+
+        font-size:16px;
+    }
+
+    .izquierda{
+        left:8px;
+    }
+
+    .derecha{
+        right:8px;
+    }
+
+
+    /* ---------- MODAL ---------- */
+
+    .modal-contenido{
+        grid-template-columns:1fr;
+
+        width:92%;
+
+        max-height:90vh;
+
+        overflow:auto;
+    }
+
+    #modal-imagen{
+        width:100%;
+
+        height:280px;
+
+        object-fit:cover;
+
+        border-radius:15px;
+    }
+
+    .modal-info{
+        padding:18px;
+
+        text-align:center;
+    }
+
+    .modal-info h2{
+        font-size:1.2rem;
+    }
+
+    .modal-info p{
+        font-size:.9rem;
+
+        line-height:1.5;
+    }
+
+    .modal-boton{
+        width:100%;
+
+        max-width:260px;
+
+        padding:11px 15px;
+
+        font-size:.85rem;
+    }
+
+    .cerrar-modal{
+        top:10px;
+
+        right:10px;
+
+        color:white;
+
+        background:rgba(139,90,80,.75);
+
+        width:40px;
+
+        height:40px;
+
+        font-size:28px;
+
+        z-index:200;
+    }
+
+    .flecha-modal{
+        width:40px;
+
+        height:40px;
+
+        font-size:18px;
+    }
+
+    #modal-anterior{
+        left:10px;
+    }
+
+    #modal-siguiente{
+        right:10px;
+    }
+
+
+    /* ---------- CONTACTO ---------- */
+
+    .seccion-contacto{
+        padding:70px 20px;
+    }
+
+    #volver-inicio-contacto{
+        display:flex;
+
+        justify-content:center;
+
+        margin:0 auto 35px;
+
+        width:85%;
+
+        max-width:280px;
+    }
+
+    .contacto-contenido{
+        grid-template-columns:1fr;
+
+        gap:35px;
+    }
+
+    .contacto-texto{
+        text-align:center;
+    }
+
+    .contacto-texto h2{
+        font-size:2rem;
+    }
+
+    .contacto-texto p{
+        font-size:.95rem;
+
+        line-height:1.7;
+    }
+
+    .tarjeta-contacto{
+        padding:28px 22px;
+
+        border-radius:25px;
+    }
+
+    .tarjeta-contacto h3{
+        font-size:1.5rem;
+
+        text-align:center;
+    }
+
+    .tarjeta-contacto p{
+        font-size:.9rem;
+
+        text-align:center;
+    }
+
+    .boton-contacto{
+        width:85%;
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+        padding:12px 15px;
+
+        font-size:.9rem;
+
+        border-radius:40px;
+    }
+
+    .info-extra{
+        text-align:center;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .footer{
+        padding:35px 20px 15px;
+    }
+
+    .footer-contenido{
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+        text-align:center;
+    }
+
+    .footer-logo h4{
+        font-size:1.2rem;
+    }
+
+    .footer p{
+        font-size:.9rem;
+    }
+
+    .footer-copy{
+        margin-top:25px;
+
+        font-size:.8rem;
+    }
+
+    .footer a:hover{
+        transform:none;
+    }
+
+
+    /* ---------- GALERÍA ---------- */
+
+    .pagina-galeria{
+        padding:100px 20px 50px;
+    }
+
+    .encabezado-galeria{
+        margin-bottom:35px;
+    }
+
+    .encabezado-galeria h1{
+        font-size:2.2rem;
+    }
+
+    .encabezado-galeria p{
+        font-size:.9rem;
+    }
+
+    #galeria-productos{
+        grid-template-columns:repeat(2,1fr);
+
+        gap:16px;
+
+        margin:30px auto;
+
+        padding:0 15px;
+    }
+
+    .tarjeta-galeria{
+        padding:7px;
+
+        border-radius:18px;
+    }
+
+    .tarjeta-galeria::before{
+        inset:4px;
+
+        border-radius:14px;
+    }
+
+    .tarjeta-galeria img{
+        border-radius:13px;
+    }
+
+    .volver-galeria{
+        margin-top: 65px;
+    }
+
+
+    /* ---------- VISOR ---------- */
+
+    .visor-imagen{
+        padding:15px;
+    }
+
+    #imagen-ampliada{
+        max-width:94vw;
+
+        max-height:82vh;
+
+        border-radius:14px;
+    }
+
+    .cerrar-imagen{
+        top:15px;
+
+        right:15px;
+
+        width:40px;
+
+        height:40px;
+
+        font-size:22px;
+    }
+
+
+    /* ---------- PRELOADER ---------- */
+
     .preloader-contenido h1{
-
         font-size:3rem;
-
     }
 
     .preloader-contenido p{
-
         font-size:1rem;
-
     }
 
     .preloader-separador span{
-
         width:55px;
-
     }
 
     .preloader-carga{
-
         width:150px;
-
     }
 
-}
 
-/*====================================================
-=          SALIDA DEL PRELOADER
-====================================================*/
+    /* ---------- BOTÓN VOLVER ---------- */
 
-#preloader{
+    .boton-volver{
+        width:85%;
 
-    transition:opacity .8s ease;
+        max-width:280px;
 
-}
+        padding:13px 20px;
 
-#preloader.ocultar-preloader{
+        font-size:.9rem;
 
-    opacity:0;
-
-    pointer-events:none;
-
-}
-
-
-/*====================================================
-=             ENTRADA DEL HERO
-====================================================*/
-
-.hero-texto,
-.hero-imagen{
-
-    opacity:0;
-
-}
-
-
-/* TÍTULO Y TEXTO ENTRAN DESDE LA IZQUIERDA */
-
-.hero-texto.entrada{
-
-    animation:entradaHeroIzquierda .9s ease forwards;
-
-}
-
-
-/* IMAGEN ENTRA DESDE LA DERECHA */
-
-.hero-imagen.entrada{
-
-    animation:entradaHeroDerecha .9s ease forwards;
-
-}
-
-
-/*====================================================
-=                 ANIMACIONES
-====================================================*/
-
-@keyframes entradaHeroIzquierda{
-
-    from{
-
-        opacity:0;
-
-        transform:translateX(-70px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateX(0);
-
-    }
-
-}
-
-
-@keyframes entradaHeroDerecha{
-
-    from{
-
-        opacity:0;
-
-        transform:translateX(70px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateX(0);
-
-    }
-
-}
-
-/*====================================================
-=        REFLEJO ANIMADO - BOTÓN CREACIONES
-====================================================*/
-
-.boton-principal{
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-
-/* BRILLO QUE ATRAVIESA EL BOTÓN */
-
-.boton-principal::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-80%;
-
-    width:45%;
-
-    height:100%;
-
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.45),
-        transparent
-    );
-
-    transform:skewX(-20deg);
-
-    animation:brilloBoton 4s ease-in-out infinite;
-
-}
-
-
-/*====================================================
-=              ANIMACIÓN DEL REFLEJO
-====================================================*/
-
-@keyframes brilloBoton{
-
-    0%{
-
-        left:-80%;
-
-    }
-
-    25%{
-
-        left:130%;
-
-    }
-
-    100%{
-
-        left:130%;
-
-    }
-
-}
-
-/*====================================================
-=        ENTRADA ANIMADA DE LAS CREACIONES
-====================================================*/
-
-.tarjeta-producto{
-
-    opacity:0;
-
-    transform:translateY(50px) scale(.96);
-
-}
-
-
-/* Cuando se activa la animación */
-
-.tarjeta-producto.mostrar-tarjeta{
-
-    animation:aparecerTarjeta .8s ease forwards;
-
-}
-
-
-/*====================================================
-=                 ANIMACIÓN
-====================================================*/
-
-@keyframes aparecerTarjeta{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(50px) scale(.96);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0) scale(1);
-
+        margin-top:20px;
     }
 
 }

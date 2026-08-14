@@ -18,7 +18,29 @@ const productos = {
             "img/juego de baño marroncito.jpg",
 
             "img/juego de baño negro completo.jpg",
-            "img/juego de baño rosita.jpg"
+            "img/juego de baño rosita.jpg",
+            "img/juego de baño marron con flor naranja.jpg",
+            "img/juego de baño gris con flor rosa.jpg",
+            "img/juego de baño lila con amarillo.jpg",
+            "img/juego de baño rojo.jpg",
+            "img/juego de baño marron con negro.jpg",
+            "img/juego de baño rojo con flor.jpg",
+            "img/juego de baño rosa con gris.jpg",
+            "img/juego de baño rojo con corazon.jpg",
+            "img/colgante para papel higienico.jpg",
+            "img/juego de baño lineas rojas y negras.jpg",
+            "img/juego de baño marron lineas rojas.jpg"
+
+
+
+
+
+
+
+
+
+
+
 
 
         ]
@@ -46,7 +68,13 @@ const productos = {
             "img/individual  verde con blanco.jpg",
             "img/individual con bordados amarillos.jpg",
             "img/individual forma de flor blanco.jpg",
-            "img/individual blanco con oro.jpg"
+            "img/individual blanco con oro.jpg",
+            "img/individuales gris sencillos.jpg",
+            "img/individual rosado oscuro con blanco.jpg",
+            "img/individual balnco con bordes verdes y rosa.jpg",
+            "img/individual con bordes de flores.jpg"
+
+
 
 
 
@@ -69,7 +97,7 @@ const productos = {
             "img/camino de mesa floreado.jpg",
 
             "img/camino de mesa naranja.jpg",
-            "img/camino de mesa blanco con flor roja.jpg",
+            "img/camino de mesa blanco con flor roja.png",
             "img/camino mesa flores celestes.jpg",
             "img/camino mesa flores grandes.jpg",
             "img/centro de mesa marroncito.jpg",
@@ -77,7 +105,11 @@ const productos = {
             "img/camino de mesa flores grandes.jpg",
             "img/camino de mesa de flor.jpg",
             "img/centro de mesa negro con rojo.jpg",
-            "img/camino de mesa largo blanco.jpg"
+            "img/camino de mesa largo blanco.png",
+            "img/camino de mesa rosado con flores blancas.jpg",
+            "img/camino de mesa amarillo elegante.jpg",
+            "img/camino de mesa largo canastita.jpg",
+            "img/camino de mesa blanco pino.jpg"
 
 
 
@@ -109,7 +141,12 @@ const productos = {
             "img/bolso lilas.jpg",
             "img/bolso rojo y rosita.jpg",
             "img/bolso naranja y amarillo.jpg",
-            "img/bolso pasteles.jpg"
+            "img/bolso pasteles.jpg",
+            "img/cartera grande colores.png",
+            "img/carterita de mano amarillo.png",
+            "img/cartera amarillo con marron.png"
+
+
 
         ]
 
@@ -145,28 +182,16 @@ const productos = {
             "img/alfombra grande sala.png",
             "img/alfombra con flor gris.jpg",
             "img/alfombra negro con azul.jpg",
-            "img/alfombras gris.jpg"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
+            "img/alfombras gris.jpg",
+            "img/alfombras flores naranjas.jpg",
+            "img/alfombras rojas con negras.png",
+            "img/alfombra larga for bordo.jpg",
+            "img/alfombra violeta y negro.jpg",
+            "img/alfombra larga flores rosas.jpg",
+            "img/alfombra larga marron y blanco.jpg",
+            "img/alfombra con varios colores y flores.jpg",
+            "img/alfombra con lineas azul oscuro y blanco.jpg"
+    
         ]
 
     },
@@ -177,7 +202,7 @@ const productos = {
         titulo: "Funda para garrafa y bidón de agua",
 
         descripcion:
-        "Fundas tejidas a mano que aportan un detalle decorativo y cálido, ayudando a integrar la garrafa con el estilo de tu hogar.",
+        "Fundas tejidas a mano que aportan un detalle decorativo y cálido, ayudando a integrar la garrafa y en donde bebes agua con el estilo de tu hogar.",
 
         
         imagenes: [
@@ -185,12 +210,10 @@ const productos = {
             "img/funda garrafa flores blancas.jpg",
             "img/garrafa marron con flor.png",
             "img/garrafa roja con flor.jpg",
-            "img/funda agua flor amarilla.jpg"
-
-           
-
-
-
+            "img/funda agua flor amarilla.jpg",
+            "img/funda para gas lila con flor blanca.jpg",
+            "img/funda para gas amarillo.jpg",
+            "img/funda para gas negro y blanco.jpg"
 
             
 

@@ -155,85 +155,62 @@ window.addEventListener("click", (e) => {
 
 });
 
-
 /* =====================================================
-   CARRUSEL DE LAS TARJETAS
+   CAMBIO AUTOMÁTICO DE IMÁGENES EN LAS TARJETAS
 ===================================================== */
 
 document.querySelectorAll(".tarjeta-producto").forEach((tarjeta) => {
 
     const imagen = tarjeta.querySelector(".imagen-producto");
-    const botonIzquierda = tarjeta.querySelector(".izquierda");
-    const botonDerecha = tarjeta.querySelector(".derecha");
 
     const idProducto = imagen.dataset.producto;
+
     const producto = productos[idProducto];
 
-    // Si el producto no existe, no hacemos nada.
+    // Si el producto no existe, no hacemos nada
     if (!producto) return;
+
+
+    /* ==========================================
+       SOLO USAMOS LAS PRIMERAS 3 IMÁGENES
+    ========================================== */
+
+    const imagenesMuestra = producto.imagenes.slice(0, 3);
 
     let indice = 0;
 
-    imagen.dataset.indice = indice;
 
-    /* ===========================
-       FLECHA DERECHA
-    =========================== */
+    /* ==========================================
+       CAMBIO AUTOMÁTICO
+    ========================================== */
 
-    botonDerecha.addEventListener("click", (e) => {
+    setInterval(() => {
 
-        e.preventDefault();
-        e.stopPropagation();
         indice++;
 
-        if (indice >= producto.imagenes.length) {
+        if (indice >= imagenesMuestra.length) {
+
             indice = 0;
+
         }
+
+
+        /* Efecto de desaparición */
 
         imagen.classList.add("fade");
 
-        setTimeout(() => {
+setTimeout(() => {
 
-            imagen.src = producto.imagenes[indice];
-            imagen.dataset.indice = indice;
+    imagen.src = imagenesMuestra[indice];
 
-            imagen.classList.remove("fade");
+    imagen.classList.remove("fade");
 
-        },180);
-
-    });
+}, 500);
 
 
-    /* ===========================
-       FLECHA IZQUIERDA
-    =========================== */
-
-    botonIzquierda.addEventListener("click", (e) => {
-
-        e.preventDefault();
-        e.stopPropagation();
-
-        indice--;
-
-        if (indice < 0) {
-            indice = producto.imagenes.length - 1;
-        }
-
-        imagen.classList.add("fade");
-
-        setTimeout(() => {
-
-            imagen.src = producto.imagenes[indice];
-            imagen.dataset.indice = indice;
-
-            imagen.classList.remove("fade");
-
-        },180);
-
-    });
+    }, 4000);
 
 });
-
 
 botonCreaciones.addEventListener("click", (e) => {
 
@@ -400,5 +377,4 @@ window.addEventListener("load", () => {
 
 });
 });
-
 
