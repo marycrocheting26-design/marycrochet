@@ -78,7 +78,10 @@ const productos = {
             "img/individual con bordes de flores.jpg",
             "img/individuales blancos con bordes rojos y verdes.jpg",
             "img/individuales blancos con formas de flor.jpg",
-            "img/individuales rectang blancos.jpg"
+            "img/individuales rectang blancos.jpg",
+            "img/individual hilo nautico marron.jpg",
+            "img/individual hilo nautico marron claro.jpg"
+
 
 
 
@@ -109,7 +112,6 @@ const productos = {
             "img/centro de mesa marroncito.jpg",
             "img/centro de mesa con bordes oros.jpg",
             "img/camino de mesa flores grandes.jpg",
-            "img/camino de mesa de flor.jpg",
             "img/centro de mesa negro con rojo.jpg",
             "img/camino de mesa largo blanco.png",
             "img/camino de mesa rosado con flores blancas.jpg",
@@ -123,7 +125,10 @@ const productos = {
             "img/camino de mesa forma de gotas marron.jpg",
             "img/camino de mesa forma de gotas marron con blanco.jpg",
             "img/centro de mesa redondo con flor en el medio.png",
-            "img/camino de mesa forma de canasta.jpg"
+            "img/camino de mesa forma de canasta.jpg",
+            "img/camino de mesa largo rosado y blanco.jpg",
+            "img/camino de mesa largo azul y blanco.jpg",
+            "img/camino de mesa largo blanco con hilo especial.jpg"
 
 
 
