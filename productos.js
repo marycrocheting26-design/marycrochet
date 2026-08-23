@@ -163,7 +163,9 @@ const productos = {
             "img/bolso pasteles.jpg",
             "img/cartera grande colores.png",
             "img/carterita de mano amarillo.png",
-            "img/cartera amarillo con marron.png"
+            "img/cartera amarillo con marron.png",
+            "img/carterita marron.jpg",
+            "img/carterita blanca.jpg"
 
 
 
@@ -215,7 +217,8 @@ const productos = {
             "img/alfombras negras y rojas con rosas.jpg",
             "img/alfombritas marrones con agujeros y rosas.jpg",
             "img/alfombras amarillo y gris.jpg",
-            "img/alfombra corta y larga rojo con rosado.jpg"
+            "img/alfombra corta y larga rojo con rosado.jpg",
+            "img/alfombras comb amarilla.jpg"
 
 
 
