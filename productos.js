@@ -218,7 +218,8 @@ const productos = {
             "img/alfombritas marrones con agujeros y rosas.jpg",
             "img/alfombras amarillo y gris.jpg",
             "img/alfombra corta y larga rojo con rosado.jpg",
-            "img/alfombras comb amarilla.jpg"
+            "img/alfombras comb amarilla.jpg",
+            "img/alfombra peludita.jpg"
 
 
 
