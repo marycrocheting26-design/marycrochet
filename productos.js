@@ -165,7 +165,10 @@ const productos = {
             "img/carterita de mano amarillo.png",
             "img/cartera amarillo con marron.png",
             "img/carterita marron.jpg",
-            "img/carterita blanca.jpg"
+            "img/carterita blanca.jpg",
+            "img/carterita marron con forrito rosa.png",
+            "img/carterita rosa con forrito.jpg",
+            "img/carterita marron oscuro con forrito.jpg"
 
 
 
@@ -219,7 +222,9 @@ const productos = {
             "img/alfombras amarillo y gris.jpg",
             "img/alfombra corta y larga rojo con rosado.jpg",
             "img/alfombras comb amarilla.jpg",
-            "img/alfombra peludita.jpg"
+            "img/alfombra peludita.jpg",
+            "img/alfombra azul y blanca.jpg",
+            "img/alfombra rosa y blanca.jpg"
 
 
 
