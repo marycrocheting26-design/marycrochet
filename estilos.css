@@ -3526,9 +3526,15 @@ a{
     }
 
     .hero-contenido{
-        grid-template-columns:1fr 1fr;
-        gap:12px;
-    }
+    grid-template-columns:.95fr 1.05fr;
+
+    gap:10px;
+}
+
+.hero-texto,
+.hero-imagen{
+    min-width:0;
+}
 
     .hero-texto h1{
         font-size:2rem;
@@ -3549,14 +3555,26 @@ a{
     }
 
     .hero-detalles{
-        gap:6px;
-        margin-bottom:16px;
-    }
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:6px;
+
+    margin-bottom:16px;
+}
 
     .hero-detalles span{
-        font-size:.64rem;
-        padding:6px 8px;
-    }
+    width:max-content;
+
+    font-size:.64rem;
+
+    padding:6px 8px;
+
+    white-space:nowrap;
+}
 
     .hero-acciones{
         flex-direction:column;
