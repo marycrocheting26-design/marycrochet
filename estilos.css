@@ -3520,7 +3520,7 @@ a{
 @media(max-width:600px){
 
     .hero{
-        padding:105px 12px 45px;
+        padding:125px 12px 45px;
     }
 
     .hero-contenido{
@@ -3540,9 +3540,10 @@ a{
     }
 
     .hero-etiqueta{
-        font-size:.65rem;
-        padding:6px 9px;
-        margin-bottom:12px;
+        font-size:.62rem;
+        padding:6px 8px;
+        margin-bottom:16px;
+        white-space:nowrap;
     }
 
     .hero-detalles{
