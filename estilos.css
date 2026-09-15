@@ -3669,5 +3669,102 @@ a{
 
 }
 
+/* =========================================================
+   ARREGLO FINAL HERO - CELULAR
+========================================================= */
+
+@media(max-width:768px){
+
+    .hero-contenido{
+        grid-template-columns:
+            .95fr 1.05fr !important;
+
+        gap:12px !important;
+
+        align-items:center;
+    }
+
+
+    /* CARTELITOS UNO ABAJO DEL OTRO */
+
+    .hero-detalles{
+        display:flex !important;
+
+        flex-direction:column !important;
+
+        flex-wrap:nowrap !important;
+
+        align-items:flex-start !important;
+
+        gap:6px !important;
+    }
+
+    .hero-detalles span{
+        width:max-content !important;
+
+        font-size:.64rem;
+
+        padding:6px 7px;
+
+        white-space:nowrap;
+    }
+
+
+    /* DEJAMOS ESPACIO ENTRE CARTELITOS Y FOTO */
+
+    .hero-imagen{
+        min-width:0;
+
+        padding-left:6px;
+    }
+
+    .hero-imagen img{
+        width:100% !important;
+
+        max-width:none !important;
+
+        height:auto;
+
+        margin:0 !important;
+
+        border-radius:20px;
+    }
+
+
+    /* ENVÍOS SIEMPRE EN UNA SOLA LÍNEA */
+
+    .envios-badge{
+        width:max-content;
+
+        white-space:nowrap;
+
+        font-size:.62rem !important;
+
+        padding:7px 8px !important;
+
+        margin:0 !important;
+    }
+
+
+    /* BOTÓN COMPLETO, SIN CORTAR "CREACIONES" */
+
+    #ver-creaciones{
+        width:max-content !important;
+
+        max-width:none !important;
+
+        padding:12px 10px !important;
+
+        font-size:clamp(.70rem, 2.9vw, .78rem) !important;
+
+        line-height:1.1;
+
+        white-space:nowrap !important;
+
+        margin-top:4px;
+    }
+
+}
+
 
 
