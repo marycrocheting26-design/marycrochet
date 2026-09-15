@@ -4,7 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
 /* =====================================================
    VARIABLES DEL MODAL
 ===================================================== */
+const menuToggle =
+    document.getElementById("menu-toggle");
 
+const menuNavegacion =
+    document.getElementById("menu-navegacion");
 const modal = document.getElementById("modal-producto");
 const imagenModal = document.getElementById("modal-imagen");
 const tituloModal = document.getElementById("modal-titulo");
@@ -15,7 +19,11 @@ const botonAnterior = document.getElementById("modal-anterior");
 const botonSiguiente = document.getElementById("modal-siguiente");
 let botonWhatsapp;
 const inicio = document.getElementById("inicio");
+const inicioCompleto = document.getElementById("inicio-completo");
 const productosSeccion = document.getElementById("productos");
+const parametrosPagina = new URLSearchParams(window.location.search);
+const seccionSolicitada = parametrosPagina.get("seccion");
+
 const botonCreaciones = document.getElementById("ver-creaciones");
 const sobreMary = document.getElementById("sobre-mi");
 const botonSobre = document.getElementById("boton-sobre");
@@ -27,6 +35,94 @@ const volverInicioContacto = document.getElementById("volver-inicio-contacto");
 
 let productoActual = null;
 let imagenActual = 0;
+
+/* =====================================================
+   MENÚ HAMBURGUESA
+===================================================== */
+
+if (menuToggle && menuNavegacion) {
+
+    menuToggle.addEventListener("click", () => {
+
+        const menuAbierto =
+            menuNavegacion.classList.toggle("activo");
+
+        menuToggle.classList.toggle(
+            "activo",
+            menuAbierto
+        );
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            menuAbierto
+        );
+
+    });
+
+}
+
+/* =====================================================
+   CERRAR MENÚ AL ELEGIR UNA OPCIÓN
+===================================================== */
+
+document
+    .querySelectorAll(".navegacion a")
+    .forEach((enlace) => {
+
+        enlace.addEventListener("click", () => {
+
+            if (menuNavegacion && menuToggle) {
+
+                menuNavegacion.classList.remove("activo");
+
+                menuToggle.classList.remove("activo");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+    });
+
+    /* =====================================================
+   IR AL INICIO DESDE EL HEADER
+===================================================== */
+
+document
+    .querySelectorAll(".ir-inicio")
+    .forEach((enlace) => {
+
+        enlace.addEventListener("click", (e) => {
+
+            e.preventDefault();
+
+            productosSeccion.classList.add("oculto");
+            sobreMary.classList.add("oculto");
+            contacto.classList.add("oculto");
+
+            inicioCompleto.classList.remove("oculto");
+
+            const heroTexto =
+                document.querySelector(".hero-texto");
+
+            const heroImagen =
+                document.querySelector(".hero-imagen");
+
+            heroTexto.classList.add("entrada");
+            heroImagen.classList.add("entrada");
+
+            window.scrollTo({
+                top:0,
+                behavior:"smooth"
+            });
+
+        });
+
+    });
 
 
 /* =====================================================
@@ -217,7 +313,7 @@ botonCreaciones.addEventListener("click", (e) => {
 
     e.preventDefault();
 
-    inicio.style.display = "none";
+    inicioCompleto.classList.add("oculto");
 
     productosSeccion.classList.remove("oculto");
 
@@ -262,7 +358,7 @@ botonSobre.addEventListener("click", (e) => {
 
     e.preventDefault();
 
-    inicio.style.display = "none";
+   inicioCompleto.classList.add("oculto");
 
     productosSeccion.classList.add("oculto");
 
@@ -281,7 +377,7 @@ volverInicioSobre.addEventListener("click", (e)=>{
 
     sobreMary.classList.add("oculto");
 
-    inicio.style.display = "block";
+   inicioCompleto.classList.remove("oculto");
 
     window.scrollTo({
         top:0,
@@ -296,7 +392,14 @@ volverInicioProductos.addEventListener("click", (e)=>{
 
     productosSeccion.classList.add("oculto");
 
-    inicio.style.display = "block";
+    inicioCompleto.classList.remove("oculto");
+
+    // Aseguramos que el Hero vuelva a ser visible
+    const heroTexto = document.querySelector(".hero-texto");
+    const heroImagen = document.querySelector(".hero-imagen");
+
+    heroTexto.classList.add("entrada");
+    heroImagen.classList.add("entrada");
 
     window.scrollTo({
         top:0,
@@ -305,14 +408,13 @@ volverInicioProductos.addEventListener("click", (e)=>{
 
 });
 
-
 volverInicioContacto.addEventListener("click", (e)=>{
 
     e.preventDefault();
 
     contacto.classList.add("oculto");
 
-    inicio.style.display = "block";
+    inicioCompleto.classList.remove("oculto");
 
     window.scrollTo({
         top:0,
@@ -325,7 +427,7 @@ botonContacto.addEventListener("click", (e) => {
 
     e.preventDefault();
 
-    inicio.style.display = "none";
+    inicioCompleto.classList.add("oculto");
 
     productosSeccion.classList.add("oculto");
 
@@ -354,6 +456,32 @@ window.addEventListener("load", () => {
 
     const heroImagen = document.querySelector(".hero-imagen");
 
+   if (seccionSolicitada === "productos") {
+
+    preloader.style.display = "none";
+
+    inicioCompleto.classList.add("oculto");
+
+    productosSeccion.classList.remove("oculto");
+
+    document.querySelectorAll(".tarjeta-producto").forEach(
+        (tarjeta, indice) => {
+
+            setTimeout(() => {
+                tarjeta.classList.add("mostrar-tarjeta");
+            }, indice * 120);
+
+        }
+    );
+
+    window.scrollTo({
+        top: 0,
+        behavior: "auto"
+    });
+
+    return;
+}
+
 
     setTimeout(() => {
 
@@ -374,7 +502,39 @@ window.addEventListener("load", () => {
 
         }, 800);
 
-    }, 5000);
+    }, 2000);
 
 });
+});
+
+/* ==================================================
+   ANIMACIONES AL HACER SCROLL
+================================================== */
+
+const elementosRevelar = document.querySelectorAll(".revelar");
+
+const observadorScroll = new IntersectionObserver(
+    function(entradas) {
+
+        entradas.forEach(function(entrada) {
+
+            if (entrada.isIntersecting) {
+
+                entrada.target.classList.add("visible");
+
+                observadorScroll.unobsersve(entrada.target);
+            }
+
+        });
+
+    },
+    {
+        threshold:0.15
+    }
+);
+
+elementosRevelar.forEach(function(elemento) {
+
+    observadorScroll.observe(elemento);
+
 });

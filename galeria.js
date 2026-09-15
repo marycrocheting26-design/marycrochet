@@ -56,30 +56,32 @@ if (producto) {
     tituloGaleria.textContent = producto.titulo;
 
 
-    producto.imagenes.forEach(function(imagen) {
+   producto.imagenes.forEach(function(imagen, indice) {
+
+    const tarjeta = document.createElement("div");
+
+    tarjeta.classList.add("tarjeta-galeria");
+
+    const imagenElemento = document.createElement("img");
+
+    imagenElemento.src = imagen;
+
+    imagenElemento.alt = producto.titulo;
+
+    imagenElemento.classList.add("imagen-galeria");
+
+    tarjeta.appendChild(imagenElemento);
+
+    galeria.appendChild(tarjeta);
 
 
-        const tarjeta = document.createElement("div");
+    setTimeout(function() {
 
-        tarjeta.classList.add("tarjeta-galeria");
+    tarjeta.classList.add("mostrar-galeria");
 
+}, 200 + indice * 180);
 
-        const imagenElemento = document.createElement("img");
-
-        imagenElemento.src = imagen;
-
-        imagenElemento.alt = producto.titulo;
-
-        imagenElemento.classList.add("imagen-galeria");
-
-
-        tarjeta.appendChild(imagenElemento);
-
-
-        galeria.appendChild(tarjeta);
-
-
-    });
+});
 
 
 } else {

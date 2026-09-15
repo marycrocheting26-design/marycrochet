@@ -5,18 +5,30 @@
 <head>
 
     <!-- ========================== METADATOS ===========================-->
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">   <!-- Indica que lapág. usa caracteres como ñ, tildes, emojis, etc..--> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!--- verificación google-->
     <meta name="google-site-verification" content="eg-fR87WHzhPBFJ-tXjUghxAfYG7KS1U21NGfQPgupQ" />
+    <meta name="twitter:card" content="summary_large_image">
 
     <!---Información para google-->
     <title>Mary Crochet | Tejidos a crochet</title>
 
-    <link rel="icon" type="image.png" href="logo mary crochet.png">
+    <meta property="og:title" content="Mary Crochet | Tejidos a crochet">
 
-    <meta name="description" content="Mari Crochet: alfombras, bolsos, caminos de mesa, individuales y mucho más tejidos a crochet, hechos a mano con amor. Conocé nuestros modelos y realizá tu pedido.">
+    <meta property="og:description" content="Creaciones tejidas a mano con amor. Diseños personalizados, piezas únicas y envíos a todo el país.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marycrochet.com.ar/">
+    <meta property="og:image" content="https://marycrochet.com.ar/img/imagen%20hero.png">
+
+    <link rel="icon" type="image/png" href="logo mary crochet.png">
+
+    <meta name="description" content="Mary Crochet: tejidos artesanales hechos a mano en Comandante Andresito, Misiones. Alfombras, bolsos, individuales, caminos de mesa y diseños personalizados con envíos a todo el país.">
+
+    <meta name="robots" content="index, follow">    <!-- Le indica a Google que pued eguardar esta pág. en sus resultados y tamb. seguir los enlaces que contiene-->
+    <meta name="author" content="Mary Crochet">
+    <meta name="theme-color" content="#8f5a43">
 
     <!-- ========================== TIPOGRAFÍAS==========================-->
 
@@ -68,57 +80,59 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section id="inicio">
+<header class="cabecera">
 
     <div class="contenedor menu">
 
     <!-- LOGO -->
 
-    <a href="#inicio" class="logo">
+    <a href="#inicio" class="logo ir-inicio">
 
         🧶 Mary Crochet
 
     </a>
 
-    <!-- MENÚ -->
+     <!-- BOTÓN HAMBURGUESA - SOLO CELULAR -->
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-    <nav class="navegacion">
 
-        <a href="#inicio">Inicio</a>
+        <!-- NAVEGACIÓN -->
+        <nav class="navegacion" id="menu-navegacion">
 
-        <a href="#" id="boton-sobre">
-            Sobre Mí
-        </a>
+            <a href="#inicio" class="ir-inicio">
+                Inicio
+            </a>
 
-        <a href="#" id="boton-contacto">Contacto</a>
+            <a href="#" id="boton-sobre">
+                Sobre Mí
+            </a>
 
-    </nav>
+            <a href="#" id="boton-contacto">
+                Contacto
+            </a>
+
+        </nav>
+
     </div>
+
+</header>
 
 
 
 <!-- ==================================================
                     HERO
 =================================================== -->
-
+<div id="inicio-completo">
 <section class="hero" id="inicio">
 
     <div class="contenedor hero-contenido">
@@ -141,11 +155,22 @@
 
             <p>
 
-                Cada puntada está tejida con paciencia, dedicación y mucho amor,
-                creando piezas únicas para acompañar los momentos más especiales.
+                 Creaciones tejidas con amor, dedicación y ese toque artesanal
+                 que transforma cada detalle en algo único y especial.
 
             </p>
 
+            <div class="hero-detalles">
+
+    <span>🧶 Diseños personalizados</span>
+
+    <span>🎁 Ideal para regalar</span>
+
+    <span>✨ Piezas únicas</span>
+
+</div>
+
+<div class="hero-acciones">
              <!-- INSIGNIA DE ENVÍOS -->
               <div class="envios-badge">
                 🚚 Envíos a todo el país 🇦🇷
@@ -154,14 +179,15 @@
             <a href="#" class="boton-principal" id="ver-creaciones">
                 💕 Descubrir creaciones
             </a>
-
+</div>
         </div>
 
         <!-- IMAGEN -->
 
         <div class="hero-imagen">
 
-            <img src="img/imagen hero.png" alt="Mary Crochet">
+            <img src="img/imagen hero.png" 
+            alt="Creaciones artesanales tejidas a crochet de Mary Crochet">
 
         </div>
 
@@ -204,13 +230,15 @@
 
         <span>🎁 Ideal para regalar</span>
     </div>
+
 </section>
+
 
 <!-- =====================================
      SECCIÓN PREPARANDO TU PEDIDO
 ===================================== -->
 
-<section class="seccion-pedido">
+<section class="seccion-pedido revelar">
 
     <div class="pedido-contenido">
 
@@ -242,42 +270,10 @@
         </div>
 
     </div>
-
 </section>
+</div>
 
 
-<!-- ==================================================
-                SEPARADOR DE CREACIONES
-=================================================== -->
-
-<section class="separador-creaciones">
-
-    <div class="contenedor">
-
-        <span class="icono-separador">
-
-            ✿
-
-        </span>
-
-        <h2>
-
-            Creaciones únicas
-
-        </h2>
-
-        <p>
-
-            Descubrí algunos de los diseños realizados a mano.
-            Cada uno puede personalizarse en colores,
-            tamaños y detalles.
-
-        </p>
-
-    </div>
-
-</section>
-</section>
 
 
 <!-- ====================== PRODUCTOS ======================-->
@@ -635,7 +631,7 @@ SECCIÓN CONTACTO
                     FOOTER
 =================================================== -->
 
-<footer class="footer">
+<footer class="footer revelar">
 
 <div class="contenedor footer-contenido">
 
@@ -649,6 +645,14 @@ SECCIÓN CONTACTO
 
     <p>✔ Atención con dedicación y amor</p>
 </div>
+
+<div class="footer-info">
+            <h4>Información</h4>
+
+            <p>📍 Comandante Andresito, Misiones</p>
+            <p>🚚 Envíos a todo el país</p>
+            <p>🧶 Trabajos personalizados</p>
+        </div>
 
 
         <div class="footer-redes">
@@ -715,6 +719,20 @@ SECCIÓN CONTACTO
     </div> <!-- Cierra modal-contenido -->
 
 </div> <!-- Cierra modal -->
+
+
+
+<!------=============== BOTÓN FLOTANTE WHATSAPP ==================-->
+<a
+    href="https://wa.me/5493757462911?text=Hola%20Mary%20Crochet%20%F0%9F%A7%B6%20Quisiera%20consultar%20por%20un%20dise%C3%B1o."
+    class="whatsapp-flotante"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Consultar por WhatsApp"
+>
+    <span class="whatsapp-icono">💬</span>
+    <span class="whatsapp-texto">Consultá tu diseño</span>
+</a>
 
 
 
