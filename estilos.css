@@ -3630,6 +3630,22 @@ a{
     font-size:1.2rem;
 }
 
+#ver-creaciones{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    width:90%;
+    max-width:290px;
+
+    padding:16px 22px;
+
+    font-size:1rem;
+    font-weight:700;
+
+    margin-top:10px;
+}
+
 }
 
 
