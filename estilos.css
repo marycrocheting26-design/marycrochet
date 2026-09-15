@@ -3526,8 +3526,8 @@ a{
     }
 
     .hero-contenido{
-        grid-template-columns:1.1fr .9fr;
-        gap:14px;
+        grid-template-columns:1fr 1fr;
+        gap:12px;
     }
 
     .hero-texto h1{
@@ -3571,11 +3571,14 @@ a{
     }
 
     .boton-principal{
-        font-size:.72rem;
-        padding:10px 13px;
+        font-size:.82rem;
+        padding:12px 15px;
+        white-space:nowrap;
     }
 
     .hero-imagen img{
+        width: 110%;
+        max-width: none;
         border-radius:20px;
     }
 
