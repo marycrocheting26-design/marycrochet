@@ -224,7 +224,8 @@ const productos = {
             "img/alfombras comb amarilla.jpg",
             "img/alfombra peludita.jpg",
             "img/alfombra azul y blanca.jpg",
-            "img/alfombra rosa y blanca.jpg"
+            "img/alfombra rosa y blanca.jpg",
+            "img/alfombra peluda marron con moño.jpg"
 
 
 
