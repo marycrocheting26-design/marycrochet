@@ -168,7 +168,9 @@ const productos = {
             "img/carterita blanca.jpg",
             "img/carterita marron con forrito rosa.png",
             "img/carterita rosa con forrito.jpg",
-            "img/carterita marron oscuro con forrito.jpg"
+            "img/carterita marron oscuro con forrito.jpg",
+            "img/cartera con hilo poliester.png",
+            "img/cartera negra con etiqueta nueva con forrito.png"
 
 
 
@@ -227,7 +229,10 @@ const productos = {
             "img/alfombra rosa y blanca.jpg",
             "img/alfombra peluda marron con moño.jpg",
             "img/alfombra larga marron con corta.jpg",
-            "img/alfombra redonda grande.jpg"
+            "img/alfombra redonda grande.jpg",
+             "img/alfombra grande celeste.jpg",
+             "img/alfombra grande rosa.jpg"
+
 
 
 
